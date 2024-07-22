@@ -20,16 +20,7 @@ function SideMenu() {
             />
             <span className="text-sm font-medium"> Dashboard </span>
           </Link>
-          <Link
-            to="/profile"
-            className="flex items-center gap-2 rounded-lg hover:bg-gray-100 px-4 py-2 text-gray-700"
-          >
-            <img
-              alt="dashboard-icon"
-              src={require("../assets/dashboard-icon.png")}
-            />
-            <span className="text-sm font-medium"> Admin Profile </span>
-          </Link>
+        
 
           <Link to="/inventory">
           <details className="group [&_summary::-webkit-details-marker]:hidden">
@@ -63,27 +54,29 @@ function SideMenu() {
           </Link>
         
 
-        
-
+          
+           
         
           <Link
             to="/"
             className="flex items-center gap-2 rounded-lg hover:bg-gray-100 px-4 py-2 text-gray-700"
           >
-            <img
-              alt="dashboard-icon"
-              src={require("../assets/dashboard-icon.png")}
-            />
-            <span className="text-sm font-medium"> Sign out  </span>
+          
+            <span className="text-sm font-medium"> → Sign out  </span>
           </Link>
         </nav>
       </div>
-
+      
       <div className="sticky inset-x-0 bottom-0 border-t border-gray-100">
         <div className="flex items-center gap-2 bg-white p-4 hover:bg-gray-50">
+        <Link
+            to="/profile"
+            className="flex items-center gap-2 rounded-lg hover:bg-gray-100 px-4 py-2 text-gray-700"
+          >
+        <span className="text-sm font-medium"> Admin Profile </span>
           <img
             alt="Profile"
-           
+            src={require("../assets/admin.jpg")}
             className="h-10 w-10 rounded-full object-cover"
           />
 
@@ -96,8 +89,10 @@ function SideMenu() {
               <span>  </span>
             </p>
           </div>
+          </Link>
         </div>
       </div>
+     
     </div>
   );
 }

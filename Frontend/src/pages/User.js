@@ -19,6 +19,7 @@ function User() {
   const [userToRemove, setuserToRemove] = useState(null);
   const [updateid, setupdateid] = useState(null);
   const [searchitem, setsearchitem] = useState('');
+  const [count, setcount] = useState('');
 
   
 
@@ -46,9 +47,11 @@ function User() {
 
   const getUsers = async () => {
     const response=await axios.get('http://127.0.0.1:8000/api/user/')
-    console.log(response.data)
+    console.log(response.data);
 
-    setusers(response.data)
+    setusers(response.data);
+    setcount(response.data.length);
+
    }
   
   
@@ -88,91 +91,31 @@ function User() {
            
           />
         )}
-        <div className="bg-white rounded p-3">
-          <span className="font-semibold px-4">Overall Inventory</span>
+         <div className="bg-white rounded p-3">
+          <span className="font-semibold px-4">Overall Users</span>
           <div className=" flex flex-col md:flex-row justify-center items-center  ">
-            <div className="flex flex-col p-10  w-full  md:w-3/12  ">
-              <span className="font-semibold text-blue-600 text-base">
-                Total Products
-              </span>
-              <span className="font-semibold text-gray-600 text-base">
-                
-              </span>
-              <span className="font-thin text-gray-400 text-xs">
-                Last 7 days
-              </span>
-            </div>
-            <div className="flex flex-col gap-3 p-10   w-full  md:w-3/12 sm:border-y-2  md:border-x-2 md:border-y-0">
-              <span className="font-semibold text-yellow-600 text-base">
-                Stores
-              </span>
-              <div className="flex gap-8">
-                <div className="flex flex-col">
-                  <span className="font-semibold text-gray-600 text-base">
-                    
-                  </span>
-                  <span className="font-thin text-gray-400 text-xs">
-                    Last 7 days
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-semibold text-gray-600 text-base">
-                    $2000
-                  </span>
-                  <span className="font-thin text-gray-400 text-xs">
-                    Revenue
-                  </span>
-                </div>
-              </div>
-            </div>
+            
+          
             <div className="flex flex-col gap-3 p-10  w-full  md:w-3/12  sm:border-y-2 md:border-x-2 md:border-y-0">
-              <span className="font-semibold text-purple-600 text-base">
-                Top Selling
-              </span>
-              <div className="flex gap-8">
-                <div className="flex flex-col">
-                  <span className="font-semibold text-gray-600 text-base">
-                    5
-                  </span>
-                  <span className="font-thin text-gray-400 text-xs">
-                    Last 7 days
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-semibold text-gray-600 text-base">
-                    $1500
-                  </span>
-                  <span className="font-thin text-gray-400 text-xs">Cost</span>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col gap-3 p-10  w-full  md:w-3/12  border-y-2  md:border-x-2 md:border-y-0">
               <span className="font-semibold text-red-600 text-base">
-                Low Stocks
+                Total Users
               </span>
               <div className="flex gap-8">
+              
                 <div className="flex flex-col">
                   <span className="font-semibold text-gray-600 text-base">
-                    12
+                 {count}
                   </span>
-                  <span className="font-thin text-gray-400 text-xs">
-                    Ordered
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-semibold text-gray-600 text-base">
-                    2
-                  </span>
-                  <span className="font-thin text-gray-400 text-xs">
-                    Not in Stock
-                  </span>
+                  
                 </div>
               </div>
             </div>
+          
+          
+           
           </div>
         </div>
 
-    
         {/* Table  */}
         <div className="overflow-x-auto rounded-lg border bg-white border-gray-200 ">
           <div className="flex justify-between pt-5 pb-3 px-3">

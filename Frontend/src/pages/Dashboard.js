@@ -15,6 +15,14 @@ function Dashboard() {
   const dept='IT'
   const authContext = useContext(AuthContext);
   const [inventories,setinventories]=useState([])
+  const [users, setusers] = useState([]);
+  const [hrUsersCount, sethr] = useState([]);
+  const [itUsersCount, setit] = useState([]);
+  const [reUsersCount, setre] = useState([]);
+  const [opUsersCount, setop] = useState([]);
+  const [salesUsersCount, setsales] = useState([]);
+  const [CEOUsersCount, setceo] = useState([]);
+  const [totalbrands, settotalbrands] = useState([]);
 
   const generateRandomColor = () => {
     // Generate random RGB values
@@ -29,13 +37,30 @@ function Dashboard() {
     const response=await axios.get('http://127.0.0.1:8000/api/item/')
     console.log(response.data)
     setinventories(response.data)
+    settotalbrands(response.data.length)
   
    }
+   const getUsers = async () => {
+    const response=await axios.get('http://127.0.0.1:8000/api/user/')
+    console.log(response.data)
+
+    setusers(response.data)
+    sethr(response.data.filter(user => user.dept === "HR").length);
+   setit(response.data.filter(user => user.dept === "IT").length);
+    setre(response.data.filter(user => user.dept === "Research").length);
+    setop(response.data.filter(user => user.dept === "Operation").length);
+    setsales(response.data.filter(user => user.dept === "Sales").length);
+    setceo(response.data.filter(user => user.dept === "CEO").length);
+   
+   
+
+   }
+  
   
   
   useEffect (()=>{
     getProducts();
-  
+    getUsers();
    },[])
   
    const calculateBrandCounts = () => {
@@ -95,7 +120,7 @@ function Dashboard() {
       
               </span>
 
-              <span className="text-xs text-gray-500"> 00 </span>
+              <span className="text-xs text-gray-500"> {salesUsersCount} </span>
             </p>
           </div>
         </article>
@@ -119,7 +144,7 @@ function Dashboard() {
           
               </span>
 
-              <span className="text-xs text-gray-500"> 00 </span>
+              <span className="text-xs text-gray-500"> {itUsersCount} </span>
             </p>
           </div>
         </article>
@@ -142,7 +167,7 @@ function Dashboard() {
           
               </span>
 
-              <span className="text-xs text-gray-500"> 00 </span>
+              <span className="text-xs text-gray-500"> {CEOUsersCount} </span>
             </p>
           </div>
         </article>
@@ -165,7 +190,7 @@ function Dashboard() {
              
               </span>
 
-              <span className="text-xs text-gray-500"> 00 </span>
+              <span className="text-xs text-gray-500">  {reUsersCount} </span>
             </p>
           </div>
         </article>
@@ -188,7 +213,7 @@ function Dashboard() {
                 
               </span>
 
-              <span className="text-xs text-gray-500"> 00 </span>
+              <span className="text-xs text-gray-500"> {opUsersCount} </span>
             </p>
           </div>
         </article>
@@ -211,7 +236,7 @@ function Dashboard() {
                 
               </span>
 
-              <span className="text-xs text-gray-500"> 00 </span>
+              <span className="text-xs text-gray-500"> {hrUsersCount} </span>
             </p>
           </div>
         </article>
@@ -231,6 +256,9 @@ function Dashboard() {
           </div>
           */}
           <div>
+            <h1><strong className="block text-sm font-medium text-gray-500">
+             Brands Overview
+            </strong></h1>
             <Doughnut data={data} />
           </div>
         </div> 

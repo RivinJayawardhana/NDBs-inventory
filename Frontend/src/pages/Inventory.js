@@ -17,6 +17,8 @@ function Inventory() {
   const [itemToRemove, setItemToRemove] = useState(null);
   const [updateid, setupdateid] = useState(null);
   const [searchitem, setsearchitem] = useState('');
+  const [count, setcount] = useState('');
+  const [cost, setcost] = useState('');
 
   
 
@@ -46,6 +48,9 @@ function Inventory() {
     const response=await axios.get('http://127.0.0.1:8000/api/item/')
     console.log(response.data)
     setinventories(response.data)
+    setcount(response.data.length)
+    const totalCost = response.data.reduce((sum, inventory) => sum + inventory.Price, 0);
+    setcost(totalCost)
   
    }
    const getUsers = async () => {
@@ -107,7 +112,7 @@ function Inventory() {
               
                 <div className="flex flex-col">
                   <span className="font-semibold text-gray-600 text-base">
-                    $1500
+                    {count}
                   </span>
                   <span className="font-thin text-gray-400 text-xs">Cost</span>
                 </div>
@@ -121,7 +126,7 @@ function Inventory() {
               
                 <div className="flex flex-col">
                   <span className="font-semibold text-gray-600 text-base">
-                    $1500
+                Rs. {cost}
                   </span>
                   <span className="font-thin text-gray-400 text-xs">Cost</span>
                 </div>
