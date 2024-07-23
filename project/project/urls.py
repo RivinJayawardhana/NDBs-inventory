@@ -17,13 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
-from app.views import Itemview,userview,UserListView
+from app.views import Itemview,userview,UserListView,adminview,AdminLoginAPIView
 
 
 route=routers.DefaultRouter()
 route.register("item",Itemview,basename="itemview")
 route.register("user",userview,basename="userview")
+route.register("admin",adminview,basename="adminview")
 route.register("userfilter",UserListView,basename="userfilter")
+route.register("login",AdminLoginAPIView,basename="AdminLoginAPIView")
 
 
 

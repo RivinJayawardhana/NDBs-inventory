@@ -62,12 +62,14 @@ const App = () => {
     <AuthContext.Provider value={value}>
       <BrowserRouter>
         <Routes>
-   
+        <Route path="/login" element={<Login />} />
           <Route
             path="/"
             element={
           
-                <Layout />
+              <ProtectedWrapper>
+              <Layout />
+            </ProtectedWrapper>
              
             }
           >

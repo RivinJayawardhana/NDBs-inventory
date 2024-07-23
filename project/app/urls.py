@@ -8,5 +8,6 @@ urlpatterns = [
     path('insert',views.insertData,name="insertData"),
     path('update/<id>',views.updateDatata,name="updateDatata"),
     path('delete/<id>',views.deleteData,name="deleteData"),
-    path('search',views.search,name="search")
+    path('search',views.search,name="search"),
+    
 ]  

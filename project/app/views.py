@@ -1,11 +1,20 @@
 from django.shortcuts import render,redirect
-from .models import Item, User
-from .serializer import itemSerializer,userSerializer
+from .models import Item, User,Admin
+from .serializer import itemSerializer,userSerializer,adminSerializer,AdminLoginSerializer
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import generics
 from rest_framework.filters import SearchFilter
+from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.parsers import JSONParser
+from rest_framework.views import APIView
+from rest_framework import status
+
+
+
 
 
 # Create your views here.
@@ -21,6 +30,10 @@ class Itemview(viewsets.ModelViewSet):
      queryset = Item.objects.all()
      serializer_class = itemSerializer
 
+class adminview(viewsets.ModelViewSet):
+     queryset = Admin.objects.all()
+     serializer_class = adminSerializer
+
 class userview(viewsets.ModelViewSet):
      queryset = User.objects.all()
      serializer_class = userSerializer
@@ -30,6 +43,22 @@ class UserListView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     filter_backends = [SearchFilter]
     search_fields = ['dept']
+
+class AdminLoginAPIView(viewsets.ModelViewSet):
+    serializer_class = AdminLoginSerializer
+
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            admin = serializer.validated_data
+            # You can perform additional actions here, such as setting tokens or sessions
+            return Response({'admin_id': admin.id}, status=status.HTTP_200_OK)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+    
 
 
 
