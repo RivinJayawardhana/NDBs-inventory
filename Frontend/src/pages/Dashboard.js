@@ -59,6 +59,7 @@ function Dashboard() {
   
   
   useEffect (()=>{
+   
     getProducts();
     getUsers();
    },[])

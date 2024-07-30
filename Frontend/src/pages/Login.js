@@ -1,5 +1,5 @@
 // import { LockClosedIcon } from "@heroicons/react/20/solid";
-import { useContext, useState } from "react";
+import { useContext, useState,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../AuthContext";
 import axios from 'axios';
@@ -17,19 +17,7 @@ function Login() {
   
   const authCheck = () => {
     setTimeout(() => {
-      axios.get('http://127.0.0.1:8000/api/login')
-        .then((response) => {
-          const data = response.data;
-          alert('Successfully Login');
-          localStorage.setItem('user', JSON.stringify(data));
-          authContext.signin(data._id, () => {
-            navigate('/');
-          });
-        })
-        .catch((error) => {
-          alert('Wrong credentials. Try again');
-          console.error('Error:', error);
-        });
+      
     }, 3000);
   };
 
@@ -37,27 +25,36 @@ function Login() {
   const [pass, setpass] = useState("");
 
 
+const [admin, setadmin] = useState();
+
+  const getAdmin = async () => {
+    try {
+      const response = await axios.get('http://127.0.0.1:8000/api/admin/1');
+
+      setadmin(response.data);
+    
+
+    } catch (error) {
+      console.error('Error fetching admin data:', error);
+    }
+  };
+
+  useEffect(() => {
+    getAdmin(); // Call getAdmin on component mount
+  }, []);
 
   const login = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await axios.post('http://localhost:8000/api/login/', {
-        email: email,
-        password: pass,
-      });
-
-      console.log('Login successful:', response.data);
-
-      // Optionally handle success, e.g., store admin ID in localStorage
-      localStorage.setItem('adminId', response.data.admin_id);
-
-      // Redirect or navigate to another page upon successful login
-      // Example: history.push('/dashboard');
-
-    } catch (error) {
-      console.error('Login error:', error);
-      alert('Invalid credentials. Please try again.');
+    if (admin.email === email && admin.password === pass) {
+      console.log('Login successful!');
+      localStorage.setItem("user", JSON.stringify(admin));
+      window.location.href='/'
+      
+      // Perform actions after successful login, e.g., redirect to dashboard
+    } else {
+      console.log('Invalid email or password.');
+      // Handle invalid credentials, e.g., show error message to user
     }
   };
   
@@ -134,7 +131,7 @@ function Login() {
             <div>
               <button
                 type="submit"
-                className="group relative flex w-full justify-center rounded-md bg-black py-2 px-3 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="group relative flex w-full justify-center rounded-md bg-black py-2 px-3 text-sm font-semibold text-white hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">

@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Item, User,Admin
-from .serializer import itemSerializer,userSerializer,adminSerializer,AdminLoginSerializer
+from .serializer import itemSerializer,userSerializer,adminSerializer
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -11,8 +11,12 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from rest_framework.views import APIView
-from rest_framework import status
-
+from rest_framework import status,permissions
+from rest_framework.exceptions import AuthenticationFailed
+from rest_framework.permissions import AllowAny
+from rest_framework.generics import GenericAPIView
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login
 
 
 
@@ -44,23 +48,17 @@ class UserListView(viewsets.ModelViewSet):
     filter_backends = [SearchFilter]
     search_fields = ['dept']
 
-class AdminLoginAPIView(viewsets.ModelViewSet):
-    serializer_class = AdminLoginSerializer
-
-    def post(self, request):
-        serializer = self.serializer_class(data=request.data)
-        if serializer.is_valid():
-            admin = serializer.validated_data
-            # You can perform additional actions here, such as setting tokens or sessions
-            return Response({'admin_id': admin.id}, status=status.HTTP_200_OK)
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-
+  
+       
     
 
-
+def login(request):
+     if request.method == 'POST':
+          form=AuthenticationForm(request,data=request.POST)
+          if form.is_valid():
+               user=form.get_user()
+               login(request,user)
+               return Response(status=status.HTTP_200_OK)
 
 def updateDatata(request,id):
      if request.method=="POST":
@@ -80,6 +78,7 @@ def updateDatata(request,id):
      d=Item.objects.get(id=id)
      context={"d":d}
      return render(request,"edit.html",context)
+     
 
 def insertData(request):
    

@@ -40,7 +40,25 @@ export default function DashProfile() {
   // admin is a dependency here
 
   
-  
+  const updateadmin = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    let formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('password',pass);
+
+
+    try {
+      const response = await axios.put(`http://127.0.0.1:8000/api/admin/1/`,formData);
+      console.log(response.data);
+      window.location.href="/profile"
+    } catch (error) {
+      console.error('Error adding item:', error);
+      // Handle error state or logging
+    }
+  };
+ 
  
 
 
@@ -55,7 +73,7 @@ export default function DashProfile() {
 
       <h1 className='my-7 text-center font-semibold text-3xl text-white'></h1>
      
-      <form  className='flex flex-col gap-4'>
+      <form  className='flex flex-col gap-4' >
         <input
           type='file'
           accept='image/*'
@@ -98,19 +116,21 @@ export default function DashProfile() {
         <TextInput
           type='text'
           id='username'
-       
+          onChange={(e) => setname(e.target.value)}
           defaultValue={name}
         />
         <TextInput
           type='email'
           id='email'
           placeholder='email'
+          onChange={(e) => setemail(e.target.value)}
      defaultValue={email}
         />
          <div>
           <div className="relative">
             <TextInput  placeholder="Password" id="password" 
-            defaultValue={pass}/>
+            defaultValue={pass}
+            onChange={(e) => setpass(e.target.value)}/>
             <button type="button" className="absolute top-2 right-3 focus:outline-none" >
              
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -130,7 +150,7 @@ export default function DashProfile() {
         <Button
           type='submit'
           className="bg-black text-white"
-         
+         onClick={updateadmin}
         >
           Update
         </Button>

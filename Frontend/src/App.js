@@ -59,7 +59,7 @@ const App = () => {
     );
 
   return (
-    <AuthContext.Provider value={value}>
+
       <BrowserRouter>
         <Routes>
         <Route path="/login" element={<Login />} />
@@ -67,9 +67,9 @@ const App = () => {
             path="/"
             element={
           
-              <ProtectedWrapper>
+            
               <Layout />
-            </ProtectedWrapper>
+          
              
             }
           >
@@ -83,7 +83,7 @@ const App = () => {
           <Route path="*" element={<NoPageFound />} />
         </Routes>
       </BrowserRouter>
-    </AuthContext.Provider>
+
   );
 };
 

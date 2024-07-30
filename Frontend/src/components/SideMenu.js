@@ -1,10 +1,71 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,useParams  } from "react-router-dom";
 import { HiUser } from "react-icons/hi";
+import { Fragment, useRef, useState,useEffect } from "react";
 
 function SideMenu() {
-  const localStorageData = JSON.parse(localStorage.getItem("user"));
+  
+  const [showModal, setShowModal] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
+  const Settime = () => {
+     const now= new Date().getTime();
+     const expiretime = now + 1*60*1000;
+     localStorage.setItem('time',expiretime)
+
+
+  }
+ 
+    
+
+    const HasTimerexpired = () => {
+      const now = new Date().getTime();
+      const expiretime=localStorage.getItem('time')
+
+      if(now>expiretime){
+        localStorage.removeItem("user");
+
+      }
+ 
+ 
+   }
+       
+  
+  useEffect(() => {
+    Settime();
+    HasTimerexpired();
+    const localStorageData = localStorage.getItem("user");
+    if (!localStorageData) {
+      // Redirect to login page if user data or token doesn't exist
+     window.location.href='/login'
+    }
+    HasTimerexpired();
+  }, []);
+
+
+
+
+  const clicklogout = () => {
+    // Set the item to be removed and show the confirmation popup
+    
+    setShowConfirmation(true);
+  }
+
+
+
+  const canclelogout = () => {
+    // Simply hide the confirmation popup and reset the itemToRemove state
+    setShowConfirmation(false);
+  
+  };
+
+  const signout = async () => {
+    localStorage.removeItem("user");
+    window.location.href="/login"
+
+   }
+
+  
   return (
     <div className="h-full flex-col justify-between  bg-white hidden lg:flex ">
       <div className="px-4 py-6">
@@ -75,7 +136,8 @@ function SideMenu() {
            
         
           <Link
-            to="/"
+            
+            onClick={clicklogout}
             className="flex items-center gap-2 rounded-lg hover:bg-gray-100 px-4 py-2 text-gray-700"
           >
           
@@ -117,6 +179,31 @@ function SideMenu() {
           </Link>
         </div>
       </div>
+      {showConfirmation && (
+          <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
+            <div className="bg-white p-5 rounded shadow-lg">
+              <p className="text-lg font-semibold mb-3">
+                Are you sure you want to Sign out?
+              </p>
+              <div className="flex justify-end gap-3">
+                <button
+                  className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded"
+                  onClick={signout}
+                >
+                  Confirm
+                </button>
+                <button
+                  className="bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-4 rounded"
+                  onClick={canclelogout}
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+
      
     </div>
   );
