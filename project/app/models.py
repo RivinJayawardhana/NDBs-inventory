@@ -11,7 +11,7 @@ class Item(models.Model):
     def __str__(self) :
         return self.name
 
-#hiii
+
 class User(models.Model):
     name=models.CharField(max_length=30,blank=False,null=False)
     dept=models.CharField(max_length=30,blank=False,null=False)
