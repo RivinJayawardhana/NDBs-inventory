@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Item, User,Admin
+from .models import item, User,Admin
 from .serializer import itemSerializer,userSerializer,adminSerializer
 from rest_framework import viewsets
 from rest_framework.response import Response
@@ -17,21 +17,44 @@ from rest_framework.permissions import AllowAny
 from rest_framework.generics import GenericAPIView
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
+import mysql.connector
 
 
 
 
-# Create your views here.
+
+ #Create your views here.
+#mydb = mysql.connector.connect(
+ # host="localhost",
+ ## user="root",
+  #password="1234"
+#)
+
+#mycursor = mydb.cursor()
+
+#mycursor.execute("use inventory")
+
+
+
+
+
+
+
+
+
+
+
+
 
 def index(request):
-   data=Item.objects.all()
+   data=item.objects.all()
    context={"data":data}
    return render(request,"index.html",context)
 #
   
 
 class Itemview(viewsets.ModelViewSet):
-     queryset = Item.objects.all()
+     queryset = item.objects.all()
      serializer_class = itemSerializer
 
 class adminview(viewsets.ModelViewSet):
@@ -84,12 +107,17 @@ def insertData(request):
    
     if request.method=="POST":
         Name=request.POST.get('name')
-        number=request.POST.get('Itemnumber')
-        Dept=request.POST.get('department')
+        number=request.POST.get('itemnum')
+        brand=request.POST.get('brand')
         User=request.POST.get('user')
+        price=request.POST.get('Price')
         print(Name,number,Dept,User)
-        query=Item(name=Name,itemnum=number,dept=Dept,user=User)
-        query.save()
+        #query=Item(name=Name,itemnum=number,dept=Dept,user=User)
+        #query.save()
+        #sql="insert into user(name,itemnum,user,price,brand) values(%s,%s,%s,%s,%s)"
+        #val=(Name,number,User,price,brand)
+        #mycursor.execute(sql,val)
+        #mydb.commit()
         return redirect("/")
 
     return render(request,"index.html")

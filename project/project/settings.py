@@ -71,6 +71,9 @@ TEMPLATES = [
     },
 ]
 
+
+
+
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
@@ -78,9 +81,13 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+       'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'inventory',
+        'USER': 'root',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',  # Set to your database host, e.g., '127.0.0.1' or 'db.example.com'
+        'PORT': '3306',       # Default MySQL port
     }
 }
 
@@ -129,6 +136,7 @@ CSRF_COOKIE_SECURE = True
 STATIC_URL = 'static/'
 
 
+APPEND_SLASH = False
 
 
 # Default primary key field type

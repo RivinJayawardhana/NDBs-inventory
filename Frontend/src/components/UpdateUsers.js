@@ -22,7 +22,7 @@ export default function Updateuser({
 
 
   const getoneProduct = async () => {
-    const response=await axios.get(`http://127.0.0.1:8000/api/user/${userid}`)
+    const response=await axios.get(`http://127.0.0.1:8000/api/user/${userid}/`)
     console.log(response.data)
     setName(response.data.name)
     setdept(response.data.dept)

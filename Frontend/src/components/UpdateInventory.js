@@ -26,7 +26,7 @@ export default function Updateinventory({
 
 
   const getoneProduct = async () => {
-    const response=await axios.get(`http://127.0.0.1:8000/api/item/${inventoryid}`)
+    const response=await axios.get(`http://127.0.0.1:8000/api/item/${inventoryid}/`)
     console.log(response.data)
     setName(response.data.name)
     setNum(response.data.itemnum)

@@ -68,7 +68,7 @@ function Inventory() {
   
   
    const confirmremove= async () => {
-    const response=await axios.delete(`http://127.0.0.1:8000/api/item/${itemToRemove}`)
+    const response=await axios.delete(`http://127.0.0.1:8000/api/item/${itemToRemove}/`)
     console.log(response.data)
    window.location.href="/inventory"
    
