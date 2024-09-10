@@ -76,7 +76,7 @@ class updateuserinventory(viewsets.ModelViewSet):
     serializer_class = itemSerializer
     queryset = item.objects.all()
     filter_backends = [SearchFilter]
-    search_fields = ['dept']     
+    search_fields = ['user']     
     
 
 def login(request):
