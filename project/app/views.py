@@ -72,7 +72,11 @@ class UserListView(viewsets.ModelViewSet):
     search_fields = ['dept']
 
   
-       
+class updateuserinventory(viewsets.ModelViewSet):
+    serializer_class = itemSerializer
+    queryset = item.objects.all()
+    filter_backends = [SearchFilter]
+    search_fields = ['dept']     
     
 
 def login(request):

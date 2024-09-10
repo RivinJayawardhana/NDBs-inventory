@@ -20,6 +20,7 @@ function User() {
   const [updateid, setupdateid] = useState(null);
   const [searchitem, setsearchitem] = useState('');
   const [count, setcount] = useState('');
+  const [user,setuser]= useState(null);
 
   
 
@@ -39,10 +40,12 @@ function User() {
     setuserToRemove(null);
   };
 
-  const handleRemoveClick = (id) => {
+  const handleRemoveClick = (id,user) => {
     // Set the item to be removed and show the confirmation popup
     setuserToRemove(id);
     setShowConfirmation(true);
+    setuser(user);
+    console.log(user)
   };
 
   const getUsers = async () => {
@@ -63,7 +66,10 @@ function User() {
    const confirmremove= async () => {
     const response=await axios.delete(`http://127.0.0.1:8000/api/user/${userToRemove}/`)
     console.log(response.data)
-   window.location.href="/user"
+    
+    const response2=await axios.delete(`http://127.0.0.1:8000/api/item/?search=${user}`)
+
+    window.location.href="/user"
  
   };
 
@@ -209,9 +215,11 @@ function User() {
                     
                     className='font-medium text-red-500 hover:underline cursor-pointer'
                   >
+
                     <button
                   
-                  onClick={() => handleRemoveClick(i.id)}
+                  onClick={() => handleRemoveClick(i.id,i.name+"-"+i.dept)
+                  }
                 >
                   {/* <Link to="/inventory/add-product">Add Product</Link> */}
                 Remove
