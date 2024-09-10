@@ -29,7 +29,7 @@ const [admin, setadmin] = useState();
 
   const getAdmin = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/api/admin/1/');
+      const response = await axios.get('http://127.0.0.1:8000/api/admin/1');
 
       setadmin(response.data);
     

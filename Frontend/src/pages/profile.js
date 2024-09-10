@@ -69,6 +69,7 @@ export default function DashProfile() {
 
 
     <div className="col-span-12 lg:col-span-10  flex justify-center">
+
     <div className=" flex flex-col gap-0 w-6/12">
 
       <h1 className='my-7 text-center font-semibold text-3xl text-white'></h1>
@@ -80,6 +81,7 @@ export default function DashProfile() {
          
           hidden
         />
+
         <div
           className='relative w-32 h-32 self-center cursor-pointer shadow-md overflow-hidden rounded-full'
        
@@ -88,6 +90,7 @@ export default function DashProfile() {
             <CircularProgressbar
             
               strokeWidth={2}
+
               styles={{
                 
                 root: {
@@ -105,7 +108,6 @@ export default function DashProfile() {
        
           <img
             style={{width:"100%"}}
-           
             src={require("../assets/logo.jpg")}
             aria-label='User Profile Image'
           />
@@ -125,6 +127,7 @@ export default function DashProfile() {
           placeholder='email'
           onChange={(e) => setemail(e.target.value)}
      defaultValue={email}
+     readOnly
         />
          <div>
           <div className="relative">
