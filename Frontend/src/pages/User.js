@@ -67,7 +67,9 @@ function User() {
     const response=await axios.delete(`http://127.0.0.1:8000/api/user/${userToRemove}/`)
     console.log(response.data)
     
-    const response2=await axios.delete(`http://127.0.0.1:8000/api/item/?search=${user}`)
+    const response2=await axios.patch(`http://127.0.0.1:8000/api/item/usernone`, {
+      set_user_to_none: user
+    });
 
     window.location.href="/user"
  
