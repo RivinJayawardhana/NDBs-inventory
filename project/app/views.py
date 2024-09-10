@@ -72,11 +72,28 @@ class UserListView(viewsets.ModelViewSet):
     search_fields = ['dept']
 
   
-class updateuserinventory(viewsets.ModelViewSet):
+class UpdateUserInventory(viewsets.ModelViewSet):
     serializer_class = itemSerializer
     queryset = item.objects.all()
-    filter_backends = [SearchFilter]
-    search_fields = ['user']     
+
+    def update(self, request, *args, **kwargs):
+        # Get the username from the request data
+        username = request.data.get('user', None)
+        
+        if username:
+            # Find the item(s) where user matches the username
+            items = item.objects.filter(user=username)
+            
+            if not items.exists():
+                return null
+            
+            # Update each matching item to set user to None
+            items.update(user=None)
+            
+            
+            
+        
+        return Response({'detail': 'Username not provided.'}, status=status.HTTP_400_BAD_REQUEST)   
     
 
 def login(request):
