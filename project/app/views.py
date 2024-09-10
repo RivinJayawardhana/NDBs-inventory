@@ -18,6 +18,7 @@ from rest_framework.generics import GenericAPIView
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 import mysql.connector
+from rest_framework.decorators import action
 
 
 
@@ -75,10 +76,12 @@ class UserListView(viewsets.ModelViewSet):
 class UpdateUserInventory(viewsets.ModelViewSet):
     serializer_class = itemSerializer
     queryset = item.objects.all()
-
-    def update(self, request, *args, **kwargs):
+    
+    
+    @action(detail=False, methods=['patch'])
+    def usernone(self, request):
         # Get the username from the request data
-        username = request.data.get('user', None)
+        username = request.data.get('set_user_to_none', None)
         
         if username:
             # Find the item(s) where user matches the username

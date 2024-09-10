@@ -66,13 +66,21 @@ function User() {
    const confirmremove= async () => {
     const response=await axios.delete(`http://127.0.0.1:8000/api/user/${userToRemove}/`)
     console.log(response.data)
-    
-    const response2=await axios.patch(`http://127.0.0.1:8000/api/item/usernone`, {
-      set_user_to_none: user
-    });
-
+    setusernone()
+   
     window.location.href="/user"
- 
+  };
+
+  const setusernone= async () => {
+    
+  
+    const response2=await axios.patch(`http://127.0.0.1:8000/api/usernone/`,{
+      set_user_to_none: user})
+  
+     console.log(response2.data)
+   
+   
+
   };
 
   
