@@ -111,7 +111,7 @@ function ITdept() {
                   User Name
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                 Devices
+                 Devices and Serial Number
                 </th>
             
               
@@ -143,7 +143,7 @@ function ITdept() {
             }).map(p => {
               return (
                     
-                      <p>{p.name}-{p.itemnum}</p>
+                      <p>{p.name}({p.itemnum})</p>
                    
                     )})}
                    
