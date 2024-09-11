@@ -53,7 +53,7 @@ export default function Updateinventory({
      formData.append('name', name);
      formData.append('itemnum', num);
      formData.append('brand', brand);
-     formData.append('user', user);
+     formData.append('user', user+"("+date+")");
      formData.append('Price', Price);
  
      try {
