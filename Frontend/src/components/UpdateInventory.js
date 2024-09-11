@@ -176,7 +176,7 @@ export default function Updateinventory({
                               htmlFor="stockSold"
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                              Assigned Date
+                              Assign Date
                             </label>
                             <input
                               type="date"
