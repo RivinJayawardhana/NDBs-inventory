@@ -113,6 +113,10 @@ function ITdept() {
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                  Devices and Serial Number
                 </th>
+              
+                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+               Remove
+                </th>
             
               
                
@@ -148,8 +152,23 @@ function ITdept() {
                     )})}
                    
                    </td>
-
+             
+                   <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                    <span
                     
+                    className='font-medium text-red-500 hover:underline cursor-pointer'
+                  >
+
+                    <button
+                  
+                 
+                  
+                >
+                  {/* <Link to="/inventory/add-product">Add Product</Link> */}
+                Remove
+                </button>
+                  </span>
+                    </td>
                     
                   </tr>
            
