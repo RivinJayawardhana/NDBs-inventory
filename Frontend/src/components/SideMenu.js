@@ -123,7 +123,7 @@ function SideMenu() {
                     alt="inventory-icon"
                     src={require("../assets/trash.png")}
                   />
-                  <span className="text-sm font-medium"> Trash </span>
+                  <span className="text-sm font-medium"> HandOver Details </span>
                 </div>
               
             </summary>
