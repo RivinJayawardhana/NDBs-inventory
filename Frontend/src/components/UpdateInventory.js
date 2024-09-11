@@ -155,7 +155,7 @@ export default function Updateinventory({
                               required onChange={(e) => setuser(e.target.value)}
                             >
                               <option value={user}> {user}</option>
-                              <option value='none'>
+                              <option value='None'>
                                     None
                                   </option>
                               {users.map((element) => {
@@ -170,7 +170,7 @@ export default function Updateinventory({
 
                          
                           </div>
-
+                          {user.toLocaleLowerCase() !== 'none' && (
                           <div>
                             <label
                               htmlFor="stockSold"
@@ -188,6 +188,7 @@ export default function Updateinventory({
                               placeholder="date"
                             />
                           </div>
+                            )}
                           <div>
                             <label
                               htmlFor="stockSold"
