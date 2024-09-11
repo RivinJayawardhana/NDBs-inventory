@@ -138,7 +138,7 @@ function ITdept() {
                     <td className="whitespace-nowrap px-4 py-2  text-gray-900">
                       {i.name}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700" >
                     {inventories.filter((p)=>{
                 return i.name ===''
                 ? p
