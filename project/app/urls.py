@@ -10,6 +10,7 @@ urlpatterns = [
     path('update/<id>',views.updateDatata,name="updateDatata"),
     path('delete/<id>',views.deleteData,name="deleteData"),
     path('search',views.search,name="search"),
+    path('api/usernone/', views.set_user_to_none, name='set-user-to-none'),
     
 
     

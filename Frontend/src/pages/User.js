@@ -75,7 +75,11 @@ function User() {
     
   
     const response2=await axios.patch(`http://127.0.0.1:8000/api/usernone/`,{
-      set_user_to_none: user})
+      set_user_to_none: user}, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
   
      console.log(response2.data)
    

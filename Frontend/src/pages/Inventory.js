@@ -180,7 +180,7 @@ function Inventory() {
                  Manufacture
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                  User
+                  User & Assigned Date
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                   Price
@@ -190,6 +190,9 @@ function Inventory() {
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                   Delete
+                </th>
+                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                  Download PDF
                 </th>
                
               </tr>

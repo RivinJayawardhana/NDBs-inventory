@@ -73,30 +73,21 @@ class UserListView(viewsets.ModelViewSet):
     search_fields = ['dept']
 
   
-class UpdateUserInventory(viewsets.ModelViewSet):
-    serializer_class = itemSerializer
-    queryset = item.objects.all()
-    
-    
-    @action(detail=False, methods=['patch'])
-    def usernone(self, request):
-        # Get the username from the request data
-        username = request.data.get('set_user_to_none', None)
-        
-        if username:
-            # Find the item(s) where user matches the username
-            items = item.objects.filter(user=username)
-            
-            if not items.exists():
-                return null
-            
-            # Update each matching item to set user to None
-            items.update(user=None)
-            
-            
-            
-        
-        return Response({'detail': 'Username not provided.'}, status=status.HTTP_400_BAD_REQUEST)   
+@api_view(['PATCH'])
+def set_user_to_none(request):
+    # Extract the user to set to 'none' from the request body
+    user_to_set_none = request.data.get('set_user_to_none')
+
+    if not user_to_set_none:
+        return Response({'error': 'User identifier not provided'}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Update the user field to 'none' for items that match the condition
+    items_updated = item.objects.filter(user=user_to_set_none).update(user='none')
+
+    if items_updated == 0:
+        return Response({'message': 'No items found for the provided user'}, status=status.HTTP_404_NOT_FOUND)
+
+    return Response({'message': f'{items_updated} items updated'}, status=status.HTTP_200_OK)
     
 
 def login(request):
