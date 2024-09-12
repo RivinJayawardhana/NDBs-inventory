@@ -23,6 +23,15 @@ function Documents() {
   const [searchitem, setsearchitem] = useState('');
   const [count, setcount] = useState('');
   const [user,setuser]= useState(null);
+  const [name, setName] = useState("");
+  const [dept, setdept] = useState("");
+  const [itemname, setitemname] = useState("");
+  const [brand, setbrand] = useState("");
+  const [serialno, setserialno] = useState("");
+  const [quantity, setquantity] = useState("");
+  const [doctype, setdoctype] = useState("");
+  const [remark, setremark] = useState("");
+  const [date, setdate] = useState("");
 
   const addModalSetting = () => {
     setShowModal(!showModal);
@@ -70,7 +79,39 @@ function Documents() {
     window.location.href="/doc"
   };
 
+  const generatePDFReport = () => {
+    const content = `
+      
+     
+    `;
+
+    html2pdf().from(content).set({ margin: 1, filename: 'supplies_report.pdf' }).save();
+  };
+
+
+
+const handleGenerateReport = async(id) => {
+  
+  const response=await axios.get(`http://127.0.0.1:8000/api/doc/${id}/`)
+  console.log(response.data)
+  setName(response.data.name)
+  
+  setitemname(response.data.item)
+  setbrand(response.data.Brand)
+  setdate(response.data.Date)
+  setdoctype(response.data.Doctype)
+  setdept(response.data.department)
+  setquantity(response.data.Quantity)
+  setremark(response.data.Remark)
+  setserialno(response.data.SerialNo)
  
+  
+  
+     generatePDFReport();
+
+  
+    
+   };
 
   
 
@@ -239,7 +280,11 @@ function Documents() {
                     <span
                     
                     className='font-medium text-blue-500 hover:underline cursor-pointer'
-                  ><button
+                  ><button onClick={() => {
+                     
+                    handleGenerateReport(i.id);
+                   
+                  }} 
                   
                   
                 >
