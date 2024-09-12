@@ -4,7 +4,7 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function AddUsers({
+export default function Adddoc({
   addModalSetting,
  
 
@@ -87,7 +87,7 @@ export default function AddUsers({
                         as="h3"
                         className="text-lg  py-4 font-semibold leading-6 text-gray-900 "
                       >
-                        Add Users
+                        Add Documentaions
                       </Dialog.Title>
                       <form  onSubmit={adduser}>
                         <div className="grid gap-4 mb-4 sm:grid-cols-2">
@@ -107,6 +107,76 @@ export default function AddUsers({
                               placeholder="Name"
                             />
                           </div>
+                          <div>
+                            <label
+                              htmlFor="stockSold"
+                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >
+                              Item Name
+                            </label>
+                            <input
+                              type="text"
+                              name="stockSold"
+                              id="stockSold"
+                              required onChange={(e) => setName(e.target.value)}
+                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                              placeholder="Name"
+                            />
+                          </div>
+                       
+                          <div>
+                            <label
+                              htmlFor="stockSold"
+                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >
+                              Brand
+                            </label>
+                            <input
+                              type="text"
+                              name="stockSold"
+                              id="stockSold"
+                              required onChange={(e) => setName(e.target.value)}
+                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                              placeholder="Name"
+                            />
+                          </div>
+
+                          <div>
+                            <label
+                              htmlFor="stockSold"
+                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >
+                              Serial Number
+                            </label>
+                            <input
+                              type="text"
+                              name="stockSold"
+                              id="stockSold"
+                              required onChange={(e) => setName(e.target.value)}
+                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                              placeholder="Name"
+                            />
+                          </div>
+                          <div>
+                            <label
+                              htmlFor="stockSold"
+                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >
+                              Quantity
+                            </label>
+                            <input
+                              type="number"
+                              name="stockSold"
+                              id="stockSold"
+                              required onChange={(e) => setName(e.target.value)}
+                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                              placeholder="Name"
+                            />
+                          </div>
+                       
+                       
+
+
                        
                           <div>
                             <label

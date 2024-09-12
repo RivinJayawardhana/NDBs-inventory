@@ -113,7 +113,7 @@ function SideMenu() {
             </summary>
           </details>
           </Link>
-          <Link to="/user">
+          <Link to="/doc">
           <details className="group [&_summary::-webkit-details-marker]:hidden">
             <summary className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-black">
              

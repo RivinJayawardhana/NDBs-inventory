@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import User from "./pages/User";
 import DashProfile from "./pages/profile";
 import ITdept from "./pages/Department";
+import Documents from "./pages/documents";
 
 const App = () => {
   const [user, setUser] = useState("");
@@ -78,6 +79,7 @@ const App = () => {
             <Route path="/itdept/:dept" element={<ITdept />} />
             <Route path="/profile" element={<DashProfile />} />
             <Route path="/user" element={<User />} />
+            <Route path="/doc" element={<Documents />} />
            
           </Route>
           <Route path="*" element={<NoPageFound />} />

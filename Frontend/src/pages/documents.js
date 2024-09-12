@@ -7,9 +7,10 @@ import AddInventories from "../components/AddInventories";
 import Updateinventory from "../components/UpdateInventory";
 import AddUsers from "../components/AddUsers";
 import Updateuser from "../components/UpdateUsers";
+import Adddoc from "../components/AddDoc";
 
 
-function Trash() {
+function Documents() {
 
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [users, setusers] = useState([]);
@@ -20,9 +21,7 @@ function Trash() {
   const [updateid, setupdateid] = useState(null);
   const [searchitem, setsearchitem] = useState('');
   const [count, setcount] = useState('');
-
-  
-
+  const [user,setuser]= useState(null);
 
   const addModalSetting = () => {
     setShowModal(!showModal);
@@ -39,10 +38,12 @@ function Trash() {
     setuserToRemove(null);
   };
 
-  const handleRemoveClick = (id) => {
+  const handleRemoveClick = (id,user) => {
     // Set the item to be removed and show the confirmation popup
     setuserToRemove(id);
     setShowConfirmation(true);
+    setuser(user);
+    console.log(user)
   };
 
   const getUsers = async () => {
@@ -63,9 +64,33 @@ function Trash() {
    const confirmremove= async () => {
     const response=await axios.delete(`http://127.0.0.1:8000/api/user/${userToRemove}/`)
     console.log(response.data)
-   window.location.href="/user"
- 
+    setusernone()
+   
+    window.location.href="/user"
   };
+
+  const setusernone= async () => {
+    
+  
+    const response2=await axios.patch(`http://127.0.0.1:8000/api/usernone/`,{
+      set_user_to_none: user}, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+  
+     console.log(response2.data)
+   
+   
+
+  };
+
+  
+
+
+  
+ 
+
 
   
   
@@ -73,7 +98,7 @@ function Trash() {
     <div className="col-span-12 lg:col-span-10  flex justify-center">
       <div className=" flex flex-col gap-5 w-11/12">
       {showModal && (
-          <AddUsers
+          <Adddoc
           addModalSetting={addModalSetting}
            
           
@@ -91,30 +116,7 @@ function Trash() {
            
           />
         )}
-         <div className="bg-white rounded p-3">
-          <span className="font-semibold px-4">Overall Users</span>
-          <div className=" flex flex-col md:flex-row justify-center items-center  ">
-            
-          
-            <div className="flex flex-col gap-3 p-10  w-full  md:w-3/12  sm:border-y-2 md:border-x-2 md:border-y-0">
-              <span className="font-semibold text-red-600 text-base">
-                Total Users
-              </span>
-              <div className="flex gap-8">
-              
-                <div className="flex flex-col">
-                  <span className="font-semibold text-gray-600 text-base">
-                 {count}
-                  </span>
-                  
-                </div>
-              </div>
-            </div>
-          
-          
-           
-          </div>
-        </div>
+        
 
         {/* Table  */}
         <div className="overflow-x-auto rounded-lg border bg-white border-gray-200 ">
@@ -141,7 +143,7 @@ function Trash() {
                 onClick={addModalSetting}
               >
                 {/* <Link to="/inventory/add-product">Add Product</Link> */}
-                Add User
+                Add Documentaions
               </button>
             </div>
           </div>
@@ -149,13 +151,33 @@ function Trash() {
             <thead>
               <tr>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                  User Name
+                User
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
               Department
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                 Email
+                Date
+                </th>
+                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                Item
+                </th>
+                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                Brand
+                </th>
+                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                Serial Number
+                </th>
+                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                Quantity
+                </th>
+                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                Remark
+                </th>
+
+
+                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                Doc type
                 </th>
             
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
@@ -259,4 +281,4 @@ function Trash() {
   );
 }
 
-export default Trash;
+export default Documents;

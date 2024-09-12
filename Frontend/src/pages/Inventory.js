@@ -82,7 +82,7 @@ function Inventory() {
       <div className=" flex flex-col gap-5 w-11/12">
       {showModal && (
           <AddInventories
-          addModalSetting={addModalSetting}
+            addModalSetting={addModalSetting}
             Users={users}
           
            
