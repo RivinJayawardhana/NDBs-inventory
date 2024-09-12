@@ -40,5 +40,6 @@ class Documents(models.Model):
     Quantity=models.CharField(max_length=20,blank=False,null=False)
     Doctype=models.CharField(max_length=20,blank=False,null=False)
     Remark=models.CharField(max_length=20,blank=False,null=False)
+    Date=models.CharField(max_length=20,blank=False,null=False,default="none")
     def __str__(self) :
         return self.name

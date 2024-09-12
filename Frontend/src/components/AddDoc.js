@@ -19,7 +19,15 @@ export default function Adddoc({
   // Handling Input Change for input fields
   const [name, setName] = useState("");
   const [dept, setdept] = useState("");
-  const [email, setemail] = useState("");
+  const [itemname, setitemname] = useState("");
+  const [brand, setbrand] = useState("");
+  const [serialno, setserialno] = useState("");
+  const [quantity, setquantity] = useState("");
+  const [doctype, setdoctype] = useState("");
+  const [remark, setremark] = useState("");
+  const [date, setdate] = useState("");
+
+
   const navigate = useNavigate();
 
 
@@ -28,11 +36,19 @@ export default function Adddoc({
 
     let formData = new FormData();
     formData.append('name', name);
-    formData.append('dept', dept);
-    formData.append('email', email);
+    formData.append('department', dept);
+    formData.append('item', itemname);
+    formData.append('Brand', brand);
+    formData.append('SerialNo', serialno);
+    formData.append('Quantity', quantity);
+    formData.append('Doctype', doctype);
+    formData.append('Remark', remark);
+    formData.append('Date', date);
+
+
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/user/', formData);
+      const response = await axios.post('http://127.0.0.1:8000/api/doc/', formData);
       console.log(response.data);
       window.location.href="/user"
     } catch (error) {
@@ -118,7 +134,7 @@ export default function Adddoc({
                               type="text"
                               name="stockSold"
                               id="stockSold"
-                              required onChange={(e) => setName(e.target.value)}
+                              required onChange={(e) => setitemname(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Item Name"
                             />
@@ -135,7 +151,23 @@ export default function Adddoc({
                               type="text"
                               name="stockSold"
                               id="stockSold"
-                              required onChange={(e) => setName(e.target.value)}
+                              required onChange={(e) => setbrand(e.target.value)}
+                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                              placeholder="Brand"
+                            />
+                          </div>
+                          <div>
+                            <label
+                              htmlFor="stockSold"
+                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >
+                              Date
+                            </label>
+                            <input
+                              type="date"
+                              name="stockSold"
+                              id="stockSold"
+                              required onChange={(e) => setdate(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Brand"
                             />
@@ -152,7 +184,7 @@ export default function Adddoc({
                               type="text"
                               name="stockSold"
                               id="stockSold"
-                              required onChange={(e) => setName(e.target.value)}
+                              required onChange={(e) => setserialno(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Serial Number"
                             />
@@ -168,7 +200,7 @@ export default function Adddoc({
                               type="number"
                               name="stockSold"
                               id="stockSold"
-                              required onChange={(e) => setName(e.target.value)}
+                              required onChange={(e) => setquantity(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Quantity"
                             />
@@ -226,7 +258,7 @@ export default function Adddoc({
                               type="text"
                               name="stockSold"
                               id="stockSold"
-                              required onChange={(e) => setemail(e.target.value)}
+                              required onChange={(e) => setdoctype(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Doc type"
                             />
@@ -243,7 +275,7 @@ export default function Adddoc({
                               type="text"
                               name="stockSold"
                               id="stockSold"
-                              required onChange={(e) => setemail(e.target.value)}
+                              required onChange={(e) => setremark(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Remark"
                             />
