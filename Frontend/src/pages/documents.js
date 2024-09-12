@@ -8,6 +8,7 @@ import Updateinventory from "../components/UpdateInventory";
 import AddUsers from "../components/AddUsers";
 import Updateuser from "../components/UpdateUsers";
 import Adddoc from "../components/AddDoc";
+import  html2pdf from "html2pdf.js";
 
 
 function Documents() {
