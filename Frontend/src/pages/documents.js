@@ -62,28 +62,14 @@ function Documents() {
   
   
    const confirmremove= async () => {
-    const response=await axios.delete(`http://127.0.0.1:8000/api/user/${userToRemove}/`)
+    const response=await axios.delete(`http://127.0.0.1:8000/api/doc/${userToRemove}/`)
     console.log(response.data)
-    setusernone()
    
-    window.location.href="/user"
+   
+    window.location.href="/doc"
   };
 
-  const setusernone= async () => {
-    
-  
-    const response2=await axios.patch(`http://127.0.0.1:8000/api/usernone/`,{
-      set_user_to_none: user}, {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-  
-     console.log(response2.data)
-   
-   
-
-  };
+ 
 
   
 
@@ -180,9 +166,7 @@ function Documents() {
                 Doc type
                 </th>
             
-                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                  Edit
-                </th>
+              
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                   Delete
                 </th>
@@ -235,13 +219,7 @@ function Documents() {
                     <span
                     
                     className='font-medium text-blue-500 hover:underline cursor-pointer'
-                  ><button
-                  
-                  onClick={()=>UpdateModalSetting(i.id)}
-                >
-                  {/* <Link to="/inventory/add-product">Add Product</Link> */}
-                  Edit
-                </button>
+                  >
                   </span>
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
