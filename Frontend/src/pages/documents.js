@@ -170,6 +170,9 @@ function Documents() {
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                   Delete
                 </th>
+                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                  Download PDF
+                </th>
                
               </tr>
             </thead>
@@ -215,13 +218,7 @@ function Documents() {
                     </td>
                    
 
-                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    <span
                     
-                    className='font-medium text-blue-500 hover:underline cursor-pointer'
-                  >
-                  </span>
-                    </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                     <span
                     
