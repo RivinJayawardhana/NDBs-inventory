@@ -47,7 +47,7 @@ function Documents() {
   };
 
   const getUsers = async () => {
-    const response=await axios.get('http://127.0.0.1:8000/api/user/')
+    const response=await axios.get('http://127.0.0.1:8000/api/doc/')
     console.log(response.data);
 
     setusers(response.data);
@@ -206,10 +206,28 @@ function Documents() {
                       {i.name}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                      {i.dept}
+                      {i.department}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.email}
+                      {i.Date}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
+                      {i.item}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
+                      {i.Brand}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
+                      {i.SerialNo}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
+                      {i.Quantity}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
+                      {i.Doctype}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
+                      {i.Remark}
                     </td>
                    
 

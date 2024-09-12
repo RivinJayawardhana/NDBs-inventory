@@ -31,7 +31,7 @@ export default function Adddoc({
   const navigate = useNavigate();
 
 
-  const adduser = async (e) => {
+  const adddoc = async (e) => {
     e.preventDefault(); // Prevent default form submission
 
     let formData = new FormData();
@@ -50,7 +50,7 @@ export default function Adddoc({
     try {
       const response = await axios.post('http://127.0.0.1:8000/api/doc/', formData);
       console.log(response.data);
-      window.location.href="/user"
+      window.location.href="/doc"
     } catch (error) {
       console.error('Error adding item:', error);
       // Handle error state or logging
@@ -105,7 +105,7 @@ export default function Adddoc({
                       >
                         Add Documentaions
                       </Dialog.Title>
-                      <form  onSubmit={adduser}>
+                      <form  onSubmit={adddoc}>
                         <div className="grid gap-4 mb-4 sm:grid-cols-2">
                         <div>
                             <label
