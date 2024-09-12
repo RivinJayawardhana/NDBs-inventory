@@ -233,6 +233,20 @@ function Documents() {
                 </button>
                   </span>
                     </td>
+
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                    <span
+                    
+                    className='font-medium text-blue-500 hover:underline cursor-pointer'
+                  ><button
+                  
+                  
+                >
+                  {/* <Link to="/inventory/add-product">Add Product</Link> */}
+                  Download
+                </button>
+                  </span>
+                    </td>
                   </tr>
            
             </tbody>
