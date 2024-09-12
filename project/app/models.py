@@ -31,9 +31,14 @@ class Admin(models.Model):
     def __str__(self) :
         return self.name
 
-class Trash(models.Model):
+class Documents(models.Model):
     name=models.CharField(max_length=30,blank=False,null=False)
-    ItemList=models.CharField(max_length=500,blank=False,null=False)
-    Date=models.CharField(max_length=20,blank=False,null=False)
+    department=models.CharField(max_length=500,blank=False,null=False)
+    item=models.CharField(max_length=20,blank=False,null=False)
+    Brand=models.CharField(max_length=20,blank=False,null=False)
+    SerialNo=models.CharField(max_length=20,blank=False,null=False)
+    Quantity=models.CharField(max_length=20,blank=False,null=False)
+    Doctype=models.CharField(max_length=20,blank=False,null=False)
+    Remark=models.CharField(max_length=20,blank=False,null=False)
     def __str__(self) :
         return self.name

@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from .models import item, User,Admin,Trash
-from .serializer import itemSerializer,userSerializer,adminSerializer,trashSerializer
+from .models import item, User,Admin,Documents
+from .serializer import itemSerializer,userSerializer,adminSerializer,DocumentsSerializer
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -58,9 +58,9 @@ class Itemview(viewsets.ModelViewSet):
      queryset = item.objects.all()
      serializer_class = itemSerializer
 
-class Trashview(viewsets.ModelViewSet):
-     queryset = Trash.objects.all()
-     serializer_class = trashSerializer
+class Documentsview(viewsets.ModelViewSet):
+     queryset = Documents.objects.all()
+     serializer_class = DocumentsSerializer
 
 class adminview(viewsets.ModelViewSet):
      queryset = Admin.objects.all()
