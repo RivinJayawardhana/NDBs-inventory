@@ -81,8 +81,50 @@ function Documents() {
 
   const generatePDFReport = () => {
     const content = `
-      
-     
+   <!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  vertical-align: top; /* Aligns content to the top */
+}
+table {
+  width: 80%;
+  margin-top: 50px;
+  margin-left: 70px;
+}
+tr {
+  height: 100px;
+}
+</style>
+</head>
+<body style="width:700px;height:1700px">
+
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Model No</th>
+    <th>Serial No</th>
+    <th>Quantity</th>
+    <th>Remark</th>
+  </tr>
+  <tr>
+    <td>Router</td>
+    <td>Dialog 4G R012</td>
+    <td>S/N-1000230004232343232</td>
+    <td>01</td>
+    <td></td>
+  </tr>
+</table>
+
+</body>
+</html>
+
     `;
 
     html2pdf().from(content).set({ margin: 1, filename: 'supplies_report.pdf' }).save();
