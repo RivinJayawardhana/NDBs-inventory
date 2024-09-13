@@ -16,6 +16,7 @@ import DashProfile from "./pages/profile";
 import ITdept from "./pages/Department";
 import Documents from "./pages/documents";
 
+
 const App = () => {
   const [user, setUser] = useState("");
   const [loader, setLoader] = useState(true);
