@@ -37,7 +37,7 @@ export default function Adddoc({
     let formData = new FormData();
     formData.append('name', name);
     formData.append('department', dept);
-    formData.append('item', itemname);
+    formData.append('items', itemname);
     formData.append('Brand', brand);
     formData.append('SerialNo', serialno);
     formData.append('Quantity', quantity);

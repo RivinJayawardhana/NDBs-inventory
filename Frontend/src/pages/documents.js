@@ -283,7 +283,7 @@ const handleGenerateReport = async(id) => {
                       {i.Date}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.item}
+                      {i.items}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
                       {i.Brand}
