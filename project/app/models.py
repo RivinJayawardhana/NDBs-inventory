@@ -34,7 +34,7 @@ class Admin(models.Model):
 class Documents(models.Model):
     name=models.CharField(max_length=30,blank=False,null=False)
     department=models.CharField(max_length=500,blank=False,null=False)
-    item=models.CharField(max_length=20,blank=False,null=False)
+    items=models.CharField(max_length=200,blank=False,null=False,default="none")
     Brand=models.CharField(max_length=20,blank=False,null=False)
     SerialNo=models.CharField(max_length=20,blank=False,null=False)
     Quantity=models.CharField(max_length=20,blank=False,null=False)
