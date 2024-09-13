@@ -69,12 +69,10 @@ export default function DashProfile() {
 
 
     <div className="col-span-12 lg:col-span-10  flex justify-center">
-
-    <div className=" flex flex-col gap-0 w-6/12">
-
-      <h1 className='my-7 text-center font-semibold text-3xl text-white'></h1>
+<div className="flex flex-col gap-0 w-6/12">
+<h1 className='my-7 text-center font-semibold text-3xl text-white'></h1>
      
-      <form  className='flex flex-col gap-4' >
+<form className='flex flex-col gap-4 relative z-10'>
         <input
           type='file'
           accept='image/*'
