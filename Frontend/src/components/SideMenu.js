@@ -121,7 +121,7 @@ function SideMenu() {
                   <img
                   style={{width:"14%"}}
                     alt="inventory-icon"
-                    src={require("../assets/trash.png")}
+                    src={require("../assets/doc.png")}
                   />
                   <span className="text-sm font-medium"> Documentaions </span>
                 </div>
