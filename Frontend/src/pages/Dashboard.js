@@ -150,6 +150,31 @@ function Dashboard() {
           </div>
         </article>
         </Link>
+
+        <Link
+        to={`/itdept/`}>
+        <article className="flex flex-col gap-4 rounded-lg border  border-gray-100 bg-white p-6  ">
+          <div className="inline-flex gap-2 self-end rounded bg-green-100 p-1 text-green-600">
+         
+
+            <span className="text-xs font-medium"> Finance Department </span>
+          </div>
+
+          <div>
+            <strong className="block text-sm font-medium text-gray-500">
+              Total Users
+            </strong>
+
+            <p>
+              <span className="text-2xl font-medium text-gray-900">
+          
+              </span>
+
+              <span className="text-xs text-gray-500"> {itUsersCount} </span>
+            </p>
+          </div>
+        </article>
+        </Link>
         <Link to={`/itdept/${"CEO"}`}>
         <article className="flex flex-col gap-4 rounded-lg border  border-gray-100 bg-white p-6  ">
           <div className="inline-flex gap-2 self-end rounded bg-green-100 p-1 text-green-600">
