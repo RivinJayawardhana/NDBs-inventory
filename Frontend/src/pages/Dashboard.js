@@ -155,7 +155,7 @@ function Dashboard() {
         to={`/itdept/${"Finance"}`}>
         <article className="flex flex-col gap-4 rounded-lg border  border-gray-100 bg-white p-6  ">
           <div className="inline-flex gap-2 self-end rounded bg-green-100 p-1 text-green-600">
-         
+         1
 
             <span className="text-xs font-medium"> Finance Department </span>
           </div>
