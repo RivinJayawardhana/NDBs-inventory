@@ -226,7 +226,7 @@ function Dashboard() {
           <div className="inline-flex gap-2 self-end rounded bg-green-100 p-1 text-green-600">
          
 
-            <span className="text-xs font-medium"> Finance & Operation Department </span>
+            <span className="text-xs font-medium"> Operation Department </span>
           </div>
 
           <div>
