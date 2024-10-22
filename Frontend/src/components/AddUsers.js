@@ -143,6 +143,9 @@ export default function AddUsers({
                                   <option value='CEO'>
                                     CEO
                                   </option>
+                                  <option value='CEO'>
+                                    Finance
+                                  </option>
                             </select>
                           </div>
                           <div>
