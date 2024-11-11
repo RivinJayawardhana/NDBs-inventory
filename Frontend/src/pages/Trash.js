@@ -167,9 +167,6 @@ function Trash() {
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                   Delete
                 </th>
-                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                  Download PDF
-                </th>
                
               </tr>
             </thead>
@@ -201,19 +198,7 @@ function Trash() {
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
                       {i.Brand}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.SerialNo}
-                    </td>
-                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.Quantity}
-                    </td>
-                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.Doctype}
-                    </td>
-                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.Remark}
-                    </td>
-                   
+                    
 
                     
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
