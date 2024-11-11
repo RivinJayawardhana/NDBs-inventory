@@ -79,81 +79,8 @@ function Trash() {
     window.location.href="/doc"
   };
 
-  const generatePDFReport = () => {
-    const content = `
-   <!DOCTYPE html>
-<html>
-<head>
-<style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 10px;
-  vertical-align: top; /* Aligns content to the top */
-}
-table {
-  width: 80%;
-  margin-top: 50px;
-  margin-left: 70px;
-}
-tr {
-  height: 100px;
-}
-</style>
-</head>
-<body style="width:700px;height:1700px">
-
-<table>
-  <tr>
-    <th>Item</th>
-    <th>Model No</th>
-    <th>Serial No</th>
-    <th>Quantity</th>
-    <th>Remark</th>
-  </tr>
-  <tr>
-    <td>Router</td>
-    <td>Dialog 4G R012</td>
-    <td>S/N-1000230004232343232</td>
-    <td>01</td>
-    <td></td>
-  </tr>
-</table>
-
-</body>
-</html>
-
-    `;
-
-    html2pdf().from(content).set({ margin: 1, filename: 'supplies_report.pdf' }).save();
-  };
-
-
-
-const handleGenerateReport = async(id) => {
   
-  const response=await axios.get(`http://127.0.0.1:8000/api/doc/${id}/`)
-  console.log(response.data)
-  setName(response.data.name)
-  
-  setitemname(response.data.item)
-  setbrand(response.data.Brand)
-  setdate(response.data.Date)
-  setdoctype(response.data.Doctype)
-  setdept(response.data.department)
-  setquantity(response.data.Quantity)
-  setremark(response.data.Remark)
-  setserialno(response.data.SerialNo)
- 
-  
-  
-     generatePDFReport();
 
-  
-    
-   };
 
   
 
@@ -304,23 +231,7 @@ const handleGenerateReport = async(id) => {
                   </span>
                     </td>
 
-                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                    <span
                     
-                    className='font-medium text-blue-500 hover:underline cursor-pointer'
-                  ><button onClick={() => {
-                     
-                    handleGenerateReport(i.id);
-                   
-                  }} 
-                  
-                  
-                >
-                  {/* <Link to="/inventory/add-product">Add Product</Link> */}
-                  Download
-                </button>
-                  </span>
-                    </td>
                   </tr>
            
             </tbody>
