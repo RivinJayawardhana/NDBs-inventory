@@ -77,7 +77,8 @@ function SideMenu() {
           >
             <img
               alt="dashboard-icon"
-              src={require("../assets/dashboard-icon.png")}
+              style={{width:"14%"}}
+              src={require("../assets/dash.png")}
             />
             <span className="text-sm font-medium"> Dashboard </span>
           </Link>
@@ -85,12 +86,13 @@ function SideMenu() {
 
           <Link to="/inventory">
           <details className="group [&_summary::-webkit-details-marker]:hidden">
-            <summary className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-black">
+            <summary className="flex items-center gap-2 rounded-lg hover:bg-gray-100 px-4 py-2 text-gray-700">
               
                 <div className="flex items-center gap-2">
                   <img
+                  style={{width:"14%"}}
                     alt="inventory-icon"
-                    src={require("../assets/order-icon.png")}
+                    src={require("../assets/box_icon.png")}
                   />
                   <span className="text-sm font-medium"> Inventory </span>
                 </div>
@@ -100,12 +102,13 @@ function SideMenu() {
           </Link>
           <Link to="/user">
           <details className="group [&_summary::-webkit-details-marker]:hidden">
-            <summary className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-black">
+            <summary className="flex items-center gap-2 rounded-lg hover:bg-gray-100 px-4 py-2 text-gray-700">
              
                 <div className="flex items-center gap-2">
                   <img
+                   style={{width:"14%"}}
                     alt="inventory-icon"
-                    src={require("../assets/supplier-icon.png")}
+                    src={require("../assets/user.png")}
                   />
                   <span className="text-sm font-medium"> Users </span>
                 </div>
@@ -115,7 +118,7 @@ function SideMenu() {
           </Link>
           <Link to="/doc">
           <details className="group [&_summary::-webkit-details-marker]:hidden">
-            <summary className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-black">
+            <summary className="flex items-center gap-2 rounded-lg hover:bg-gray-100 px-4 py-2 text-gray-700">
              
                 <div className="flex items-center gap-2">
                   <img
@@ -131,7 +134,7 @@ function SideMenu() {
           </Link>
           <Link to="/doc">
           <details className="group [&_summary::-webkit-details-marker]:hidden">
-            <summary className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-black">
+            <summary className="flex items-center gap-2 rounded-lg hover:bg-gray-100 px-4 py-2 text-gray-700">
              
                 <div className="flex items-center gap-2">
                   <img
