@@ -162,7 +162,9 @@ function Trash() {
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                 Date
                 </th>
-               
+                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                  Edit
+                </th>
               
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                   Delete
@@ -199,7 +201,19 @@ function Trash() {
                       {i.Brand}
                     </td>
                     
-
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                    <span
+                    
+                    className='font-medium text-blue-500 hover:underline cursor-pointer'
+                  ><button
+                  
+                  onClick={()=>UpdateModalSetting(i.id)}
+                >
+                  {/* <Link to="/inventory/add-product">Add Product</Link> */}
+                  Edit
+                </button>
+                  </span>
+                    </td>
                     
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                     <span
