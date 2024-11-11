@@ -125,6 +125,7 @@ function SideMenu() {
                   style={{width:"14%"}}
                     alt="inventory-icon"
                     src={require("../assets/doc.png")}
+                 
                   />
                   <span className="text-sm font-medium"> Documentaions </span>
                 </div>
@@ -132,7 +133,8 @@ function SideMenu() {
             </summary>
           </details>
           </Link>
-          <Link to="/doc">
+        
+          <Link to="/">
           <details className="group [&_summary::-webkit-details-marker]:hidden">
             <summary className="flex items-center gap-2 rounded-lg hover:bg-gray-100 px-4 py-2 text-gray-700">
              
@@ -148,6 +150,7 @@ function SideMenu() {
             </summary>
           </details>
           </Link>
+      
         
 
           
