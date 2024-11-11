@@ -112,26 +112,10 @@ export default function Addtrash({
                               htmlFor="stockSold"
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                              Name sdssd
+                              Name 
                             </label>
                             <input
                               type="text"
-                              name="stockSold"
-                              id="stockSold"
-                              required onChange={(e) => setName(e.target.value)}
-                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              placeholder="sdsdsds"
-                            />
-                          </div>
-                          <div>
-                            <label
-                              htmlFor="stockSold"
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            >
-                              PDF
-                            </label>
-                            <input
-                              type="file"
                               name="stockSold"
                               id="stockSold"
                               required onChange={(e) => setName(e.target.value)}
@@ -144,7 +128,23 @@ export default function Addtrash({
                               htmlFor="stockSold"
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                              Item Name
+                              ID Number
+                            </label>
+                            <input
+                              type="text"
+                              name="stockSold"
+                              id="stockSold"
+                              required onChange={(e) => setName(e.target.value)}
+                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                              placeholder="ID Number"
+                            />
+                          </div>
+                          <div>
+                            <label
+                              htmlFor="stockSold"
+                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >
+                             Assert Name
                             </label>
                             <input
                               type="text"
@@ -152,7 +152,7 @@ export default function Addtrash({
                               id="stockSold"
                               required onChange={(e) => setitemname(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              placeholder="Item Name"
+                              placeholder="Assert Name"
                             />
                           </div>
                        
@@ -161,7 +161,7 @@ export default function Addtrash({
                               htmlFor="stockSold"
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                              Brand
+                              Serial Number
                             </label>
                             <input
                               type="text"
@@ -169,7 +169,7 @@ export default function Addtrash({
                               id="stockSold"
                               required onChange={(e) => setbrand(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              placeholder="Brand"
+                              placeholder="Serial Number"
                             />
                           </div>
                           <div>
@@ -185,7 +185,7 @@ export default function Addtrash({
                               id="stockSold"
                               required onChange={(e) => setdate(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              placeholder="Brand"
+                              placeholder="Date"
                             />
                           </div>
 
@@ -194,114 +194,19 @@ export default function Addtrash({
                               htmlFor="stockSold"
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                              Serial Number
-                            </label>
-                            <input
-                              type="text"
-                              name="stockSold"
-                              id="stockSold"
-                              required onChange={(e) => setserialno(e.target.value)}
-                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              placeholder="Serial Number"
-                            />
-                          </div>
-                          <div>
-                            <label
-                              htmlFor="stockSold"
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            >
-                              Quantity
+                              Contact Number
                             </label>
                             <input
                               type="number"
                               name="stockSold"
                               id="stockSold"
-                              required onChange={(e) => setquantity(e.target.value)}
+                              required onChange={(e) => setdate(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              placeholder="Quantity"
-                            />
-                          </div>
-                       
-                       
-
-
-                       
-                          <div>
-                            <label
-                              htmlFor="productID"
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            >
-                              Department
-                            </label>
-                            <select
-                              id="productID"
-                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              name="productID"
-                              required onChange={(e) => setdept(e.target.value)}
-                            >
-                              <option value='none'>Select Department</option>
-                              <option value='none'>
-                                    None
-                                  </option>
-                                  <option value='IT'>
-                                    IT
-                                  </option>
-                                  <option value='HR'>
-                                    HR
-                                  </option>
-                                  <option value='Operation'>
-                                    Operation
-                                  </option>
-                                  <option value='Research'>
-                                    Research
-                                  </option>
-                                  <option value='Sales'>
-                                    Sales
-                                  </option>
-                                  <option value='CEO'>
-                                    CEO
-                                  </option>
-                            </select>
-                          </div>
-                          <div>
-                            <label
-                              htmlFor="productID"
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            >
-                              Doc type
-                            </label>
-                            <select
-                              id="productID"
-                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              name="productID"
-                              required onChange={(e) => setdoctype(e.target.value)}
-                            >
-                              <option value='Handover'>Hand Over</option>
-                             
-                                  <option value='Return'>
-                                    Return
-                                  </option>
-                                  
-                            </select>
-                          </div>
-
-                          <div>
-                            <label
-                              htmlFor="stockSold"
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            >
-                            Remark
-                            </label>
-                            <input
-                              type="text"
-                              name="stockSold"
-                              id="stockSold"
-                              required onChange={(e) => setremark(e.target.value)}
-                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              placeholder="Remark"
+                              placeholder=" Contact Number"
                             />
                           </div>
 
+                
 
                           
                         
@@ -339,7 +244,7 @@ export default function Addtrash({
                     className="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"
                     
                   >
-                    Add Documents
+                    Add to Trash
                   </button>
                   <button
                     type="button"
