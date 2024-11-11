@@ -7,7 +7,7 @@ import AddInventories from "../components/AddInventories";
 import Updateinventory from "../components/UpdateInventory";
 import AddUsers from "../components/AddUsers";
 import Updateuser from "../components/UpdateUsers";
-import Adddoc from "../components/AddDoc";
+import Addtrash from "../components/Addtrash";
 import  html2pdf from "html2pdf.js";
 
 
@@ -95,7 +95,7 @@ function Trash() {
     <div className="col-span-12 lg:col-span-10  flex justify-center">
       <div className=" flex flex-col gap-5 w-11/12">
       {showModal && (
-          <Adddoc
+          <Addtrash
           addModalSetting={addModalSetting}
            
           
@@ -151,7 +151,7 @@ function Trash() {
                 User
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-            ID number
+                ID number
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                 Assert Name
