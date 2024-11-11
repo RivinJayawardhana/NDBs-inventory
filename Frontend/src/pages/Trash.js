@@ -11,7 +11,7 @@ import Adddoc from "../components/AddDoc";
 import  html2pdf from "html2pdf.js";
 
 
-function Documents() {
+function Trash() {
 
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [users, setusers] = useState([]);
@@ -362,4 +362,4 @@ const handleGenerateReport = async(id) => {
   );
 }
 
-export default Documents;
+export default Trash;
