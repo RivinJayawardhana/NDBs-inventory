@@ -140,7 +140,7 @@ function Trash() {
                 onClick={addModalSetting}
               >
                 {/* <Link to="/inventory/add-product">Add Product</Link> */}
-                Add Documentaions
+                Add Item
               </button>
             </div>
           </div>
