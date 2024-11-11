@@ -134,7 +134,7 @@ function SideMenu() {
           </details>
           </Link>
         
-          <Link to="/">
+          <Link to="/trash">
           <details className="group [&_summary::-webkit-details-marker]:hidden">
             <summary className="flex items-center gap-2 rounded-lg hover:bg-gray-100 px-4 py-2 text-gray-700">
              

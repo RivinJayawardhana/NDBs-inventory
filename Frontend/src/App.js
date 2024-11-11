@@ -15,7 +15,7 @@ import User from "./pages/User";
 import DashProfile from "./pages/profile";
 import ITdept from "./pages/Department";
 import Documents from "./pages/documents";
-
+import Trash from "./pages/Trash";
 
 const App = () => {
   const [user, setUser] = useState("");
@@ -81,6 +81,7 @@ const App = () => {
             <Route path="/profile" element={<DashProfile />} />
             <Route path="/user" element={<User />} />
             <Route path="/doc" element={<Documents />} />
+            <Route path="/trash" element={<Trash />} />
            
           </Route>
           <Route path="*" element={<NoPageFound />} />
