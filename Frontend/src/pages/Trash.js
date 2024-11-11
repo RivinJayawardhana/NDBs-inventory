@@ -224,32 +224,18 @@ const handleGenerateReport = async(id) => {
                 User
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-              Department
+            ID number
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                Date
-                </th>
-                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                Item
-                </th>
-                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                Brand
+                Assert Name
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                 Serial Number
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                Quantity
+                Date
                 </th>
-                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                Remark
-                </th>
-
-
-                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                Doc type
-                </th>
-            
+               
               
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                   Delete
