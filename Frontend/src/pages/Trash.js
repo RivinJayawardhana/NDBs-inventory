@@ -189,7 +189,7 @@ function Trash() {
                 
                   <tr >
                     <td className="whitespace-nowrap px-4 py-2  text-gray-900">
-                      {i.User}
+                      {i.username}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                       {i.IDnumber}
