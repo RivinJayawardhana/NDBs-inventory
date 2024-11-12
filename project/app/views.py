@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import item, User,Admin,Documents
-from .serializer import itemSerializer,userSerializer,adminSerializer,DocumentsSerializer
+from .serializer import itemSerializer,userSerializer,adminSerializer,DocumentsSerializer,TrashSerializer
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -75,6 +75,11 @@ class UserListView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     filter_backends = [SearchFilter]
     search_fields = ['dept']
+
+class Trashview(viewsets.ModelViewSet):
+     queryset = User.objects.all()
+     serializer_class = TrashSerializer
+
 
   
 @api_view(['PATCH'])
