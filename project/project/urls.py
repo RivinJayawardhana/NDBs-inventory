@@ -26,7 +26,7 @@ route.register("user",userview,basename="userview")
 route.register("admin",adminview,basename="adminview")
 route.register("userfilter",UserListView,basename="userfilter")
 route.register("doc",Documentsview,basename="doc")
-route.register("trash",Documentsview,basename="trash")
+route.register("trash",Trashview,basename="trash")
 
 
 

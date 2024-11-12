@@ -56,8 +56,8 @@ function Trash() {
     console.log(user)
   };
 
-  const getUsers = async () => {
-    const response=await axios.get('http://127.0.0.1:8000/api/doc/')
+  const gettrash = async () => {
+    const response=await axios.get('http://127.0.0.1:8000/api/trash/')
     console.log(response.data);
 
     setusers(response.data);
@@ -67,7 +67,7 @@ function Trash() {
   
   
   useEffect (()=>{
-    getUsers();
+    gettrash();
    },[])
   
   
