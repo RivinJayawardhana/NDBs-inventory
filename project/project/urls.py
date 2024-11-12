@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
-from app.views import Itemview,userview,UserListView,adminview,Documentsview
+from app.views import Itemview,userview,UserListView,adminview,Documentsview,Trashview
 
 
 route=routers.DefaultRouter()
@@ -26,6 +26,7 @@ route.register("user",userview,basename="userview")
 route.register("admin",adminview,basename="adminview")
 route.register("userfilter",UserListView,basename="userfilter")
 route.register("doc",Documentsview,basename="doc")
+route.register("trash",Documentsview,basename="trash")
 
 
 
