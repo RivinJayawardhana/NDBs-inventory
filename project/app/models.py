@@ -43,3 +43,12 @@ class Documents(models.Model):
     Date=models.CharField(max_length=20,blank=False,null=False,default="none")
     def __str__(self) :
         return self.name
+
+class Trash(models.Model):
+    User=models.CharField(max_length=30,blank=False,null=False)
+    IDnumber=models.CharField(max_length=500,blank=False,null=False)
+    AssertName=models.CharField(max_length=200,blank=False,null=False,default="none")
+    SerialNumber=models.CharField(max_length=20,blank=False,null=False)
+    Date=models.CharField(max_length=20,blank=False,null=False,default="none")
+    def __str__(self) :
+        return self.name
