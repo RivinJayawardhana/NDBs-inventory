@@ -140,7 +140,7 @@ function User() {
         <div className="overflow-x-auto rounded-lg border bg-white border-gray-200 ">
           <div className="flex justify-between pt-5 pb-3 px-3">
             <div className="flex gap-4 justify-center items-center ">
-              <span className="font-bold">Products</span>
+              <span className="font-bold">Users</span>
               <div className="flex justify-center items-center px-2 border-2 rounded-md ">
                 <img
                   alt="search-icon"
