@@ -61,7 +61,7 @@ function Trash() {
     console.log(response.data);
 
     setusers(response.data);
-    setcount(response.data.length);
+
 
    }
   
@@ -160,6 +160,9 @@ function Trash() {
                 Serial Number
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                  Contact Number
+                </th>
+                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                 Date
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
@@ -175,7 +178,7 @@ function Trash() {
             {users.filter((i)=>{
                 return searchitem.toLocaleLowerCase()===''
                 ? i
-                : i.name.toLocaleLowerCase().includes(searchitem) || i.name.includes(searchitem);
+                : i.AssertName.toLocaleLowerCase().includes(searchitem) || i.AssertName.includes(searchitem);
         
             }).map(i => {
               return (
@@ -186,19 +189,22 @@ function Trash() {
                 
                   <tr >
                     <td className="whitespace-nowrap px-4 py-2  text-gray-900">
-                      {i.name}
+                      {i.User}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                      {i.department}
+                      {i.IDnumber}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
+                      {i.AssertName}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
+                      {i.SerialNumber}
+                    </td>
+                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
+                      {i.contactnumber}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
                       {i.Date}
-                    </td>
-                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.items}
-                    </td>
-                    <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.Brand}
                     </td>
                     
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
