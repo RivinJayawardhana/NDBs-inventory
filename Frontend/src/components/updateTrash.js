@@ -3,7 +3,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/24/outline";
 import axios from "axios";
 
-export default function Updateinventory({
+export default function UpdateTrash({
     UpdateModalSetting,
     users,
   inventoryid

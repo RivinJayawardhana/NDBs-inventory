@@ -3,11 +3,9 @@ import React, { useState, useEffect, useContext } from "react";
 import AuthContext from "../AuthContext";
 import axios from 'axios'
 import { Link } from "react-router-dom";
-import AddInventories from "../components/AddInventories";
-import Updateinventory from "../components/UpdateInventory";
-import AddUsers from "../components/AddUsers";
-import Updateuser from "../components/UpdateUsers";
+
 import Addtrash from "../components/Addtrash";
+import UpdateTrash from "../components/updateTrash";
 
 
 
@@ -96,7 +94,7 @@ function Trash() {
         )}
 
 {showUpdateModal && (
-          <Updateuser
+          <UpdateTrash
           UpdateModalSetting={UpdateModalSetting}
           
             userid={updateid}
