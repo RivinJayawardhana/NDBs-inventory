@@ -31,15 +31,12 @@ export default function Addtrash({
     e.preventDefault(); // Prevent default form submission
 
     let formData = new FormData();
-    formData.append('name', name);
-    formData.append('department', dept);
-    formData.append('items', itemname);
-    formData.append('Brand', brand);
-    formData.append('SerialNo', serialno);
-    formData.append('Quantity', quantity);
-    formData.append('Doctype', doctype);
-    formData.append('Remark', remark);
-    formData.append('Date', date);
+    formData.append('name', User);
+    formData.append('id', ID);
+    formData.append('assertname', AssertName);
+    formData.append('SerialNumber', SerialNumber);
+    formData.append('date', date);
+   
 
 
 
