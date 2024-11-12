@@ -41,9 +41,9 @@ export default function Addtrash({
 
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/doc/', formData);
+      const response = await axios.post('http://127.0.0.1:8000/api/trash/', formData);
       console.log(response.data);
-      window.location.href="/doc"
+      window.location.href="/trash"
     } catch (error) {
       console.error('Error adding item:', error);
       // Handle error state or logging
