@@ -32,12 +32,12 @@ export default function Addtrash({
     e.preventDefault(); // Prevent default form submission
 
     let formData = new FormData();
-    formData.append('name', User);
-    formData.append('id', ID);
-    formData.append('assertname', AssertName);
+    formData.append('User', User);
+    formData.append('IDnumber', ID);
+    formData.append('AssertName', AssertName);
     formData.append('SerialNumber', SerialNumber);
-    formData.append('date', date);
-    formData.append('number', number);
+    formData.append('Date', date);
+    formData.append('contactnumber', number);
    
 
 
