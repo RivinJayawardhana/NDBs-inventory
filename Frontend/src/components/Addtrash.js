@@ -22,6 +22,7 @@ export default function Addtrash({
   const [AssertName, setAssertName] = useState("");
   const [SerialNumber, setSerialNumber] = useState("");
   const [date, setdate] = useState("");
+  const [number, setnumber] = useState("");
 
 
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ export default function Addtrash({
     formData.append('assertname', AssertName);
     formData.append('SerialNumber', SerialNumber);
     formData.append('date', date);
+    formData.append('number', number);
    
 
 
@@ -96,7 +98,7 @@ export default function Addtrash({
                         as="h3"
                         className="text-lg  py-4 font-semibold leading-6 text-gray-900 "
                       >
-                        Add Documentaions
+                        Add Trash Items
                       </Dialog.Title>
                       <form  onSubmit={adddoc}>
                         <div className="grid gap-4 mb-4 sm:grid-cols-2">
@@ -111,7 +113,7 @@ export default function Addtrash({
                               type="text"
                               name="stockSold"
                               id="stockSold"
-                              required onChange={(e) => setName(e.target.value)}
+                              required onChange={(e) => setuser(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Name"
                             />
@@ -127,7 +129,7 @@ export default function Addtrash({
                               type="text"
                               name="stockSold"
                               id="stockSold"
-                              required onChange={(e) => setName(e.target.value)}
+                              required onChange={(e) => setid(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="ID Number"
                             />
@@ -143,7 +145,7 @@ export default function Addtrash({
                               type="text"
                               name="stockSold"
                               id="stockSold"
-                              required onChange={(e) => setitemname(e.target.value)}
+                              required onChange={(e) => setAssertName(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Assert Name"
                             />
@@ -160,7 +162,7 @@ export default function Addtrash({
                               type="text"
                               name="stockSold"
                               id="stockSold"
-                              required onChange={(e) => setbrand(e.target.value)}
+                              required onChange={(e) => setSerialNumber(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Serial Number"
                             />
@@ -193,7 +195,7 @@ export default function Addtrash({
                               type="number"
                               name="stockSold"
                               id="stockSold"
-                              required onChange={(e) => setdate(e.target.value)}
+                              required onChange={(e) => setnumber(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder=" Contact Number"
                             />
