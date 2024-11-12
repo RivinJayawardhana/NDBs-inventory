@@ -60,7 +60,7 @@ export default function UpdateTrash({
  
      try {
        const response = await axios.put(`http://127.0.0.1:8000/api/trash/${userid}/`,formData);
-       console.log(response.data);
+      // console.log(response.data);
        window.location.href="/trash"
      } catch (error) {
        console.error('Error adding item:', error);
