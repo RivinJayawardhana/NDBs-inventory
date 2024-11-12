@@ -100,7 +100,7 @@ export default function Addtrash({
                       >
                         Add Trash Items
                       </Dialog.Title>
-                      <form  onSubmit={adddoc}>
+                      <form  onSubmit={addTrash}>
                         <div className="grid gap-4 mb-4 sm:grid-cols-2">
                         <div>
                             <label
