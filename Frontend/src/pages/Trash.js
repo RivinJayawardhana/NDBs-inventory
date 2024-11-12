@@ -8,7 +8,7 @@ import Updateinventory from "../components/UpdateInventory";
 import AddUsers from "../components/AddUsers";
 import Updateuser from "../components/UpdateUsers";
 import Addtrash from "../components/Addtrash";
-import  html2pdf from "html2pdf.js";
+
 
 
 function Trash() {
@@ -21,17 +21,9 @@ function Trash() {
   const [userToRemove, setuserToRemove] = useState(null);
   const [updateid, setupdateid] = useState(null);
   const [searchitem, setsearchitem] = useState('');
-  const [count, setcount] = useState('');
+
   const [user,setuser]= useState(null);
-  const [name, setName] = useState("");
-  const [dept, setdept] = useState("");
-  const [itemname, setitemname] = useState("");
-  const [brand, setbrand] = useState("");
-  const [serialno, setserialno] = useState("");
-  const [quantity, setquantity] = useState("");
-  const [doctype, setdoctype] = useState("");
-  const [remark, setremark] = useState("");
-  const [date, setdate] = useState("");
+
 
   const addModalSetting = () => {
     setShowModal(!showModal);
