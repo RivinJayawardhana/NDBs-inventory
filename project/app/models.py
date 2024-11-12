@@ -50,7 +50,6 @@ class Trash(models.Model):
     AssertName=models.CharField(max_length=200,blank=False,null=False,default="none")
     SerialNumber=models.CharField(max_length=20,blank=False,null=False)
     contactnumber=models.CharField(max_length=20,blank=False,null=False,default="none")
-
     Date=models.CharField(max_length=20,blank=False,null=False,default="none")
     def __str__(self) :
         return self.name
