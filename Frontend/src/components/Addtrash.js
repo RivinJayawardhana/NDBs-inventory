@@ -17,21 +17,17 @@ export default function Addtrash({
   const cancelButtonRef = useRef(null);
  
   // Handling Input Change for input fields
-  const [name, setName] = useState("");
-  const [dept, setdept] = useState("");
-  const [itemname, setitemname] = useState("");
-  const [brand, setbrand] = useState("");
-  const [serialno, setserialno] = useState("");
-  const [quantity, setquantity] = useState("");
-  const [doctype, setdoctype] = useState("");
-  const [remark, setremark] = useState("");
+  const [User, setuser] = useState("");
+  const [ID, setid] = useState("");
+  const [AssertName, setAssertName] = useState("");
+  const [SerialNumber, setSerialNumber] = useState("");
   const [date, setdate] = useState("");
 
 
   const navigate = useNavigate();
 
 
-  const adddoc = async (e) => {
+  const addTrash= async (e) => {
     e.preventDefault(); // Prevent default form submission
 
     let formData = new FormData();
