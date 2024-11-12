@@ -45,7 +45,7 @@ class Documents(models.Model):
         return self.name
 
 class Trash(models.Model):
-    User=models.CharField(max_length=30,blank=False,null=False)
+    username=models.CharField(max_length=30,blank=False,null=False)
     IDnumber=models.CharField(max_length=500,blank=False,null=False)
     AssertName=models.CharField(max_length=200,blank=False,null=False,default="none")
     SerialNumber=models.CharField(max_length=20,blank=False,null=False)

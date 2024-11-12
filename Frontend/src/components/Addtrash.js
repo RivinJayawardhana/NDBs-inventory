@@ -32,7 +32,7 @@ export default function Addtrash({
     e.preventDefault(); // Prevent default form submission
 
     let formData = new FormData();
-    formData.append('User', User);
+    formData.append('username', User);
     formData.append('IDnumber', ID);
     formData.append('AssertName', AssertName);
     formData.append('SerialNumber', SerialNumber);

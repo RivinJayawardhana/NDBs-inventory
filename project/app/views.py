@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import item, User,Admin,Documents
+from .models import item, User,Admin,Documents,Trash
 from .serializer import itemSerializer,userSerializer,adminSerializer,DocumentsSerializer,TrashSerializer
 from rest_framework import viewsets
 from rest_framework.response import Response
@@ -77,7 +77,7 @@ class UserListView(viewsets.ModelViewSet):
     search_fields = ['dept']
 
 class Trashview(viewsets.ModelViewSet):
-     queryset = User.objects.all()
+     queryset = Trash.objects.all()
      serializer_class = TrashSerializer
 
 
