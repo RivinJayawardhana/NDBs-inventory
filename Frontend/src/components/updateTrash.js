@@ -5,41 +5,42 @@ import axios from "axios";
 
 export default function UpdateTrash({
     UpdateModalSetting,
-    users,
-  inventoryid
+
+    userid
 
 
   
 }) {
 
-  const [open, setOpen] = useState(true);
-  const [inventories,setinventories]=useState([])
-  const [inventory,setinventory]=useState("")
-  const [name, setName] = useState("");
-   const [num, setNum] = useState("");
-   const [brand, setBrand] = useState("");
-   const [Price, setPrice] = useState("");
-   const [user, setuser] = useState("");
-   const [date, setdate] = useState("");
-
-
-  const cancelButtonRef = useRef(null);
-
+    const [open, setOpen] = useState(true);
+    const [inventories,setinventories]=useState([])
+  
+    const cancelButtonRef = useRef(null);
+   
+    // Handling Input Change for input fields
+    const [User, setuser] = useState("");
+    const [ID, setid] = useState("");
+    const [AssertName, setAssertName] = useState("");
+    const [SerialNumber, setSerialNumber] = useState("");
+    const [date, setdate] = useState("");
+    const [number, setnumber] = useState("");
+  
 
   const getoneProduct = async () => {
-    const response=await axios.get(`http://127.0.0.1:8000/api/item/${inventoryid}/`)
+    const response=await axios.get(`http://127.0.0.1:8000/api/trash/${userid}/`)
     console.log(response.data)
-    setName(response.data.name)
-    setNum(response.data.itemnum)
-    setBrand(response.data.brand)
-    setPrice(response.data.Price)
-    setuser(response.data.user)
+    setuser(response.data.username)
+    setid(response.data.IDnumber)
+    setAssertName(response.data.AssertName)
+    setSerialNumber(response.data.SerialNumber)
+    setdate(response.data.Date)
+    setnumber(response.data.contactnumber)
    }
 
    useEffect (()=>{
     
     getoneProduct();
-   },[inventoryid])
+   },[userid])
 
 
    
@@ -50,16 +51,17 @@ export default function UpdateTrash({
      e.preventDefault(); // Prevent default form submission
  
      let formData = new FormData();
-     formData.append('name', name);
-     formData.append('itemnum', num);
-     formData.append('brand', brand);
-     formData.append('user', user);
-     formData.append('Price', Price);
+     formData.append('username', User);
+     formData.append('IDnumber', ID);
+     formData.append('AssertName', AssertName);
+     formData.append('SerialNumber', SerialNumber);
+     formData.append('Date', date);
+     formData.append('contactnumber', number);
  
      try {
-       const response = await axios.put(`http://127.0.0.1:8000/api/item/${inventoryid}/`,formData);
+       const response = await axios.put(`http://127.0.0.1:8000/api/trash/${userid}/`,formData);
        console.log(response.data);
-       window.location.href="/inventory"
+       window.location.href="/trash"
      } catch (error) {
        console.error('Error adding item:', error);
        // Handle error state or logging
@@ -129,61 +131,50 @@ export default function UpdateTrash({
                               htmlFor="stockSold"
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                              Name
+                              User
                             </label>
                             <input
                               type="text"
                               name="stockSold"
                               id="stockSold"
-                              defaultValue={name}
+                              defaultValue={User}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Name"
-                              required onChange={(e) => setName(e.target.value)}
+                              required onChange={(e) => setuser(e.target.value)}
                             />
                           </div>
-                          <div>
-                            <label
-                              htmlFor="productID"
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            >
-                              User
-                            </label>
-                            <select
-                              id="productID"
-                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              name="productID"
-                              required onChange={(e) => setuser(e.target.value)}
-                            >
-                              <option value={user}> {user}</option>
-                              <option value='None'>
-                                    None
-                                  </option>
-                              {users.map((element) => {
-                                return (
-                                  <option value={element.name+"-"+element.dept}>
-                                    {element.name}-{element.dept}
-                                  </option>
-                                );
-                              })}
-                            </select>
 
-
-                         
-                          </div>
-                       
                           <div>
                             <label
                               htmlFor="stockSold"
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                              Brand
+                              ID number
                             </label>
                             <input
                               type="text"
                               name="stockSold"
                               id="stockSold"
-                              defaultValue={brand}
-                              required onChange={(e) => setBrand(e.target.value)} 
+                              defaultValue={ID}
+                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                              placeholder="Name"
+                              required onChange={(e) => setid(e.target.value)}
+                            />
+                          </div>
+                        
+                          <div>
+                            <label
+                              htmlFor="stockSold"
+                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >
+                              Assert Name
+                            </label>
+                            <input
+                              type="text"
+                              name="stockSold"
+                              id="stockSold"
+                              defaultValue={AssertName}
+                              required onChange={(e) => setAssertName(e.target.value)} 
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Brand"
                             />
@@ -199,8 +190,8 @@ export default function UpdateTrash({
                               type="text"
                               name="stockSold"
                               id="stockSold"
-                              defaultValue={num}
-                              required onChange={(e) => setNum(e.target.value)}
+                              defaultValue={SerialNumber}
+                              required onChange={(e) => setSerialNumber(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Serial Number"
                             />
@@ -212,19 +203,35 @@ export default function UpdateTrash({
                               htmlFor="totalSaleAmount"
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                             Price
+                             Date
                             </label>
                             <input
                               type="number"
                               name="totalSaleAmount"
                               id="price"
-                             defaultValue={Price}
-                             required onChange={(e) => setPrice(e.target.value)}
+                             defaultValue={date}
+                             required onChange={(e) => setdate(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Price"
                             />
                           </div>
-                    
+                          <div>
+                            <label
+                              htmlFor="stockSold"
+                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >
+                              Contact
+                            </label>
+                            <input
+                              type="text"
+                              name="stockSold"
+                              id="stockSold"
+                              defaultValue={number}
+                              required onChange={(e) => setnumber(e.target.value)} 
+                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                              placeholder="Brand"
+                            />
+                          </div>
                         </div>
                         <div className="flex items-center space-x-4">
                           {/* <button
@@ -258,7 +265,7 @@ export default function UpdateTrash({
                     className="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"
                   
                   >
-                    Update Inventories
+                    Update 
                   </button>
                   <button
                     type="button"
