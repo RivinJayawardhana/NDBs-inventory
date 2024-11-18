@@ -170,6 +170,9 @@ function Inventory() {
           <table className="min-w-full divide-y-2 divide-gray-200 text-sm">
             <thead>
               <tr>
+              <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                  Assert ID
+                </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                   Product Name
                 </th>
@@ -184,6 +187,9 @@ function Inventory() {
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                   Price
+                </th>
+                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                  Assert ID
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                   Edit
@@ -208,6 +214,9 @@ function Inventory() {
               
                 
                   <tr>
+                  <td className="whitespace-nowrap px-4 py-2  text-gray-900">
+                      {i.assertid}
+                    </td>
                     <td className="whitespace-nowrap px-4 py-2  text-gray-900">
                       {i.name}
                     </td>
