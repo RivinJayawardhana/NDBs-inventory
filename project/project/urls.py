@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
 from app.views import Itemview,userview,UserListView,adminview,Documentsview,Trashview
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 route=routers.DefaultRouter()
@@ -38,3 +40,6 @@ urlpatterns = [
     path('api/',include(route.urls)),
  
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
