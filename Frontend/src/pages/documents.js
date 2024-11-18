@@ -158,7 +158,11 @@ const handleGenerateReport = async(id) => {
   
 
 
-  
+   const handleViewPDF = (fileUrl) => {
+    // Open the PDF in a new tab
+    window.open(fileUrl, '_blank');
+  };
+
  
 
 
@@ -324,7 +328,7 @@ const handleGenerateReport = async(id) => {
                     className='font-medium text-blue-500 hover:underline cursor-pointer'
                   ><button onClick={() => {
                      
-                    handleGenerateReport(i.id);
+                    handleViewPDF(i.file);
                    
                   }} 
                   
