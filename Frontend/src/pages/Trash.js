@@ -1,9 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-
-import AuthContext from "../AuthContext";
 import axios from 'axios'
-import { Link } from "react-router-dom";
-
 import Addtrash from "../components/Addtrash";
 import UpdateTrash from "../components/updateTrash";
 
