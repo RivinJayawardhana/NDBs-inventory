@@ -19,6 +19,8 @@ export default function AddInventories({
   // Handling Input Change for input fields
   const [name, setName] = useState("");
   const [num, setNum] = useState("");
+  const [assertid, setassertid] = useState("");
+  
   const [brand, setBrand] = useState("");
   const [Price, setPrice] = useState("");
   const [user, setuser] = useState("");
@@ -35,6 +37,7 @@ export default function AddInventories({
     formData.append('brand', brand);
     formData.append('user', user);
     formData.append('Price', Price);
+    formData.append('assertid', assertid);
 
     try {
       const response = await axios.post('http://127.0.0.1:8000/api/item/', formData);
@@ -110,6 +113,22 @@ export default function AddInventories({
                               required onChange={(e) => setName(e.target.value)}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Name"
+                            />
+                          </div>
+                          <div>
+                            <label
+                              htmlFor="stockSold"
+                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >
+                              Assert ID
+                            </label>
+                            <input
+                              type="text"
+                              name="stockSold"
+                              id="stockSold"
+                              required onChange={(e) => setassertid(e.target.value)}
+                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                              placeholder="Assert ID"
                             />
                           </div>
                           <div>
