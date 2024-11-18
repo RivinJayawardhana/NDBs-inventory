@@ -21,6 +21,7 @@ export default function Updateinventory({
    const [Price, setPrice] = useState("");
    const [user, setuser] = useState("");
    const [date, setdate] = useState("");
+   const [assertid, setassertid] = useState("");
 
 
   const cancelButtonRef = useRef(null);
@@ -34,6 +35,7 @@ export default function Updateinventory({
     setBrand(response.data.brand)
     setPrice(response.data.Price)
     setuser(response.data.user)
+    setassertid(response.data.assertid)
    }
 
    useEffect (()=>{
@@ -55,6 +57,7 @@ export default function Updateinventory({
      formData.append('brand', brand);
      formData.append('user', user);
      formData.append('Price', Price);
+     formData.append('assertid', assertid);
  
      try {
        const response = await axios.put(`http://127.0.0.1:8000/api/item/${inventoryid}/`,formData);
@@ -139,6 +142,23 @@ export default function Updateinventory({
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                               placeholder="Name"
                               required onChange={(e) => setName(e.target.value)}
+                            />
+                          </div>
+                          <div>
+                            <label
+                              htmlFor="stockSold"
+                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            >
+                              Assert ID
+                            </label>
+                            <input
+                              type="text"
+                              name="stockSold"
+                              id="stockSold"
+                              defaultValue={assertid}
+                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                              placeholder="Assert ID"
+                              required onChange={(e) => setassertid(e.target.value)}
                             />
                           </div>
                           <div>
