@@ -8,6 +8,7 @@ class item(models.Model):
     brand=models.CharField(max_length=30,blank=False,null=False)
     user=models.CharField(max_length=50,blank=False,null=False,default="none")
     Price=models.IntegerField(default=0)
+    assertid=models.CharField(max_length=30,blank=False,null=False)
    
     
 
