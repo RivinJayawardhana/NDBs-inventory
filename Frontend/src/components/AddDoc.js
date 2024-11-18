@@ -39,18 +39,22 @@ export default function Adddoc({
     formData.append('name', name);
     formData.append('department', dept);
     formData.append('items', itemname);
-    formData.append('Brand', brand);
-    formData.append('SerialNo', serialno);
-    formData.append('Quantity', quantity);
-    formData.append('Doctype', doctype);
-    formData.append('Remark', remark);
-    formData.append('Date', date);
+    formData.append('brand', brand);
+    formData.append('serial_no', serialno);
+    formData.append('quantity', quantity);
+    formData.append('doctype', doctype);
+    formData.append('remark', remark);
+    formData.append('date', date);
     formData.append("file", file); // Attach file
 
 
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/doc/', formData);
+      const response = await axios.post('http://127.0.0.1:8000/api/doc/', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data',  // Ensure content type is set for file upload
+        },
+    });
       console.log(response.data);
       window.location.href="/doc"
     } catch (error) {
@@ -135,11 +139,11 @@ export default function Adddoc({
                             <input
                               type="file"
                               name="stockSold"
-                              id="stockSold"
+                              id="file"
                               required 
                               onChange={(e) => setFile(e.target.files[0])}
                               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                              placeholder="Name"
+                              placeholder="File"
                             />
                           </div>
                           <div>

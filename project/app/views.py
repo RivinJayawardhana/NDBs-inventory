@@ -19,6 +19,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 import mysql.connector
 from rest_framework.decorators import action
+from rest_framework.views import APIView
 
 
 
@@ -80,7 +81,13 @@ class Trashview(viewsets.ModelViewSet):
      queryset = Trash.objects.all()
      serializer_class = TrashSerializer
 
-
+class DocumentView(APIView):
+    def post(self, request, *args, **kwargs):
+        serializer = DocumentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
   
 @api_view(['PATCH'])
 def set_user_to_none(request):
