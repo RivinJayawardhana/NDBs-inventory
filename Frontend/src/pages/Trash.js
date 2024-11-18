@@ -140,7 +140,7 @@ function Trash() {
                 ID number
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                Assert Name
+                Assert ID
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                 Serial Number

@@ -151,7 +151,7 @@ export default function Adddoc({
                               htmlFor="stockSold"
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                              Item Name
+                             Assert ID
                             </label>
                             <input
                               type="text"

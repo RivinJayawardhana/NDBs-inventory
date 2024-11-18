@@ -234,7 +234,7 @@ const handleGenerateReport = async(id) => {
                 Date
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                Item
+                Assert ID
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                 Brand

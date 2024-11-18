@@ -106,8 +106,7 @@ export default function Addtrash({
                             <label
                               htmlFor="stockSold"
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            >
-                              Name 
+                            >Name
                             </label>
                             <input
                               type="text"
@@ -139,7 +138,7 @@ export default function Addtrash({
                               htmlFor="stockSold"
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                             Assert Name
+                             Assert ID
                             </label>
                             <input
                               type="text"

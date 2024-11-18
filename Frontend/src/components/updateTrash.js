@@ -167,7 +167,7 @@ export default function UpdateTrash({
                               htmlFor="stockSold"
                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                              Assert Name
+                              Assert ID
                             </label>
                             <input
                               type="text"
