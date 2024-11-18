@@ -259,7 +259,7 @@ const handleGenerateReport = async(id) => {
                   Delete
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                  Download PDF
+                View
                 </th>
                
               </tr>
