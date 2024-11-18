@@ -331,7 +331,7 @@ const handleGenerateReport = async(id) => {
                   
                 >
                   {/* <Link to="/inventory/add-product">Add Product</Link> */}
-                  Download
+                  View
                 </button>
                   </span>
                     </td>
