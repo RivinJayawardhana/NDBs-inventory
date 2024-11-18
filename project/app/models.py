@@ -32,16 +32,18 @@ class Admin(models.Model):
         return self.name
 
 class Documents(models.Model):
-    name=models.CharField(max_length=30,blank=False,null=False)
-    department=models.CharField(max_length=500,blank=False,null=False)
-    items=models.CharField(max_length=200,blank=False,null=False,default="none")
-    Brand=models.CharField(max_length=20,blank=False,null=False)
-    SerialNo=models.CharField(max_length=20,blank=False,null=False)
-    Quantity=models.CharField(max_length=20,blank=False,null=False)
-    Doctype=models.CharField(max_length=20,blank=False,null=False)
-    Remark=models.CharField(max_length=20,blank=False,null=False)
-    Date=models.CharField(max_length=20,blank=False,null=False,default="none")
-    def __str__(self) :
+    name = models.CharField(max_length=30, blank=False, null=False)
+    department = models.CharField(max_length=500, blank=False, null=False)
+    items = models.CharField(max_length=200, blank=False, null=False, default="none")
+    brand = models.CharField(max_length=20, blank=False, null=False)  # Renamed for convention
+    serial_no = models.CharField(max_length=20, blank=False, null=False)  # Renamed for convention
+    quantity = models.CharField(max_length=20, blank=False, null=False)
+    doctype = models.CharField(max_length=20, blank=False, null=False)
+    remark = models.CharField(max_length=20, blank=False, null=False)
+    date = models.CharField(max_length=20, blank=False, null=False, default="none")
+    file = models.FileField(upload_to="uploads/", blank=True, null=True)  # Add file upload support
+
+    def __str__(self):
         return self.name
 
 class Trash(models.Model):
