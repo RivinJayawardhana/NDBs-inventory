@@ -280,25 +280,25 @@ const handleGenerateReport = async(id) => {
                       {i.department}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.Date}
+                      {i.date}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
                       {i.items}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.Brand}
+                      {i.brand}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.SerialNo}
+                      {i.serial_no}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.Quantity}
+                      {i.quantity}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.Doctype}
+                      {i.doctype}
                     </td>
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700"> 
-                      {i.Remark}
+                      {i.remark}
                     </td>
                    
 
