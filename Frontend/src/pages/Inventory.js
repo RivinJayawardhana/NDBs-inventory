@@ -188,9 +188,7 @@ function Inventory() {
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                   Price
                 </th>
-                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-                  Assert ID
-                </th>
+               
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                   Edit
                 </th>
